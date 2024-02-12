@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic);
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Lora:regular,500,600,700,italic,500italic,600italic,700italic);
 
 * {
   margin: 0;
@@ -41,6 +42,7 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  z-index: 2;
 }
 
 .logo-wrapper {
@@ -106,9 +108,29 @@ section.hero {
 
 section#about {
   background: url('https://images.unsplash.com/photo-1559599101-f09722fb4948?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+  position: relative;
+  
 }
 
 .description-container {
+  position: absolute;
   width: 50%;
-  height: 50%
+  background-color: #fff;
+  font-family: 'Lora', sans-serif;
+  font-style: italic;
+  font-size: 4rem;
+  padding: 2rem;
+  opacity: 0.85;
+  border-radius: 1.5rem;
+  background-color: #d6e6c2;
+}
+
+.description-container:nth-of-type(1) {
+  top: 130px;
+  left: 50px;
+}
+
+.description-container:nth-of-type(2) {
+  right: 50px;
+  bottom: 50px;
 }
