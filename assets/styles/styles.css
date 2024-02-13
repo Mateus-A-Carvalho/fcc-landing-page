@@ -9,8 +9,6 @@
   outline: none;
 }
 
-/* logo : https://cdn.pixabay.com/photo/2018/08/14/11/59/silhouette-3605401_1280.png */
-
 html {
   height: 100vh;
   font-size: 62.5%;
@@ -20,8 +18,8 @@ html {
 body {
   font-size: 1.8rem;
   height: 100%;
-  
   min-width: 1024px;
+  font-family: 'Lora', sans-serif;
 }
 
 /* NAVBAR SETTINGS */
@@ -43,6 +41,7 @@ header{
   align-items: center;
   padding: 1rem 2rem;
   z-index: 2;
+  opacity: .3;
 }
 
 .logo-wrapper {
@@ -109,28 +108,20 @@ section.hero {
 section#about {
   background: url('https://images.unsplash.com/photo-1559599101-f09722fb4948?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
   position: relative;
-  
+  background-size: cover;
 }
 
 .description-container {
   position: absolute;
-  width: 50%;
-  background-color: #fff;
-  font-family: 'Lora', sans-serif;
+  top: 50%;
+  width: 90%;
+  margin: 0 auto;
   font-style: italic;
-  font-size: 4rem;
+  font-size: 2.4rem;
   padding: 2rem;
   opacity: 0.85;
   border-radius: 1.5rem;
   background-color: #d6e6c2;
 }
 
-.description-container:nth-of-type(1) {
-  top: 130px;
-  left: 50px;
-}
 
-.description-container:nth-of-type(2) {
-  right: 50px;
-  bottom: 50px;
-}
