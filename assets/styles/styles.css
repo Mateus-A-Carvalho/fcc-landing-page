@@ -315,7 +315,7 @@ a.nav-link {
   transition: var(--link-hover-timing);  
 }
 
-/* h1.logo__heading:hover, */
+h1.logo__heading:hover,
 a.nav-link:hover {
   opacity: .7;
   transform: scale(102%);
