@@ -26,7 +26,7 @@
   /* TRANSITIONS AND ANIMATIONS VARIABLES */
 
   /* POSITION VARIABLES */
-  --margin-containers: 150px;
+  --margin-containers: 100px;
   /* POSITION VARIABLES */
 }
 
@@ -86,7 +86,9 @@ div h1.logo__heading {
   font-family: var(--logo-font);
   font-size: 4.2rem;
   padding: 0.5rem 1rem;
-  transition: opacity 250ms ease-in-out;
+  transition: 
+    opacity 250ms ease-in-out,
+    transform 250ms ease-in-out;
 }
 
 /* LOGO */
@@ -113,7 +115,30 @@ div h1.logo__heading {
   padding: 1rem .5rem;
   font-family: var(--nav__link-font);
   font-size: 2.4rem;
+  transition: 
+    opacity 250ms ease-in-out,
+    transform 250ms ease-in-out;
+  position: relative;
 } 
+
+.nav-link::before,
+.nav-link::after {
+  content:"";
+  width: 0;
+  background-color: #fff;  
+  height: .1rem;
+  display: block;
+  position: absolute;
+  transition: width 250ms ease-in-out;
+}
+
+.nav-link::before {
+  right: 0;
+}
+
+.nav-link::after {
+  left: 0;
+}
 
 .hero-link {
   text-decoration: none;
@@ -166,14 +191,19 @@ section#about {
   background-size: cover;
 }
 
+.description-container p{
+  font-weight: 900;
+  font-size: 2em;
+  text-align: center;
+}
+
 .description-container:nth-of-type(1) {
   position: absolute;
-  top: var(--margin-containers);
+  top: calc(var(--margin-containers) + 8rem);
   left: var(--margin-containers);
-  width: 35rem;
+  width: 45rem;
   margin: 0 auto;
   font-style: italic;
-  font-size: 2.4rem;
   padding: 2rem;
   opacity: 0.85;
   border-radius: var(--border-radius);
@@ -186,10 +216,9 @@ section#about {
   position: absolute;
   bottom: var(--margin-containers);
   right: var(--margin-containers);
-  width: 35rem;
+  width: 45rem;
   margin: 0 auto;
   font-style: italic;
-  font-size: 2.4rem;
   padding: 2rem;
   opacity: 0.85;
   border-radius: var(--border-radius);
@@ -256,8 +285,7 @@ section#products {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
-  align-items:start
-}
+  align-items:start}
 
 /* PRODUCTS SECTION */
 
@@ -291,5 +319,16 @@ a.nav-link {
 h1.logo__heading:hover,
 a.nav-link:hover {
   opacity: .7;
+  transform: scale(102%);
+}
+
+.nav-link:hover{
+  opacity: .7;
+  transform: scale(102%);
+}
+
+.nav-link:hover::before {
+  width: 100%;
+  left: 0;
 }
 /* EFFECTS/ANIMATIONS */
