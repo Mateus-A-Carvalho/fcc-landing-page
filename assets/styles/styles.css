@@ -30,6 +30,13 @@
   /* POSITION VARIABLES */
 }
 
+/* UTILITY CLASSES */
+.text-focus-in {
+  -webkit-animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+/* UTILITY CLASSES */
+
 * {
   margin: 0;
   padding: 0;
@@ -334,3 +341,21 @@ a.nav-link:active {
   transform: scale(90%);
 }
 /* EFFECTS/ANIMATIONS */
+
+
+/* KEYFRAMES */
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(15px);
+              filter: blur(15px);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+    
+  }
+/* KEYFRAMES */
