@@ -152,7 +152,6 @@ div h1.logo__heading {
 /* NAVBAR SETTINGS */
 
 main {
-  /* max-width: 1024px; */
   height: auto;
   width: 100%;
   margin: 0 auto;
@@ -317,13 +316,13 @@ form.form {
 /* FORM SECTION */
 
 /* EFFECTS/ANIMATIONS */
-/* h1.logo__heading, */
+h1.logo__heading,
 a.nav-link {
   transition: var(--link-hover-timing);  
 }
 
-h1.logo__heading:hover,
-a.nav-link:hover {
+.logo__heading:hover,
+.nav-link:hover {
   opacity: .7;
   transform: scale(102%);
 }
