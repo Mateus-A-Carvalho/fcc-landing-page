@@ -22,10 +22,12 @@
   --soft-borders: 1px solid rgb(23, 23, 23, .3);
   --header-height: 8rem;
   --font-size-btn: 3.6rem;
+  --btn-prev-border: 0 1.5rem 1.5rem 0;
+  --btn-next-border: 1.5rem 0 0 1.5rem;
   /* CONTAINER VARIABLES */
 
   /* TRANSITIONS AND ANIMATIONS VARIABLES */
-  --hover-timing: opacity 250ms ease-in-out;
+  --transition-timing: 250ms ease-in-out;
   --link-active-timing: opacity 250ms ease-in-out;
   /* TRANSITIONS AND ANIMATIONS VARIABLES */
 
@@ -255,7 +257,6 @@ section#products {
 .product__photo {
   width: 100%;
   height: 100%;
-  margin: 0 .5rem;
 }
 
 .products-img__container-wrapper {
@@ -271,18 +272,24 @@ section#products {
 
 .btn {
   position: absolute;
+  overflow: hidden;
   font-size: var(--font-size-btn);
   background-color: rgb(255, 255, 250, .5);
   height: 10rem;
   padding: 3.5rem 1rem;
+  transition: 
+    transform var(--transition-timing),
+    background var(--transition-timing);
 }
 
 .btn-prev{
   left: 0;
+  border-radius: var(--btn-prev-border);
 }
 
 .btn-next{
   right: 0;
+  border-radius: var(--btn-next-border);
 }
 
 .products-img__container-wrapper:nth-of-type(1) {
@@ -352,9 +359,11 @@ form.form {
 /* FORM SECTION */
 
 /* EFFECTS/ANIMATIONS */
+  /* Header animations */
 h1.logo__heading,
 a.nav-link {
-  transition: var(--hover-timing);  
+  transition: 
+    opacity var(--transition-timing),
 }
 
 .logo__heading:hover,
@@ -373,8 +382,17 @@ a.nav-link {
 
 h1.logo__heading:active,
 a.nav-link:active {
-  transform: var(--link-active-timing);
+  transform: scale(90%);
 }
+  /* Header animations */
+
+  /* Btn's animations */
+.btn:hover {
+  transform: scale(105%);
+  cursor: pointer;
+  background-color: #bebeba;
+}
+  /* Btn's animations */
 /* EFFECTS/ANIMATIONS */
 
 
