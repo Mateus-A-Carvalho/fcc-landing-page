@@ -21,6 +21,7 @@
   --border: 3px solid rgb(23, 23, 23, .7);
   --soft-borders: 1px solid rgb(23, 23, 23, .3);
   --header-height: 8rem;
+  --font-size-btn: 3.6rem;
   /* CONTAINER VARIABLES */
 
   /* TRANSITIONS AND ANIMATIONS VARIABLES */
@@ -246,7 +247,8 @@ section#products {
 
 .products-img__container-wrapper,
 .products-text__container-wrapper {
-  margin: calc(3rem) auto;
+  margin: calc(1.5rem) auto;
+  height: 80vh;
 }
 
 
@@ -261,9 +263,26 @@ section#products {
   width: 100%;
   overflow: hidden;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: end;
   align-items: center;
-  height: 80vh;
+  position: relative;
+}
+
+.btn {
+  position: absolute;
+  font-size: var(--font-size-btn);
+  background-color: rgb(255, 255, 250, .5);
+  height: 10rem;
+  padding: 3.5rem 1rem;
+}
+
+.btn-prev{
+  left: 0;
+}
+
+.btn-next{
+  right: 0;
 }
 
 .products-img__container-wrapper:nth-of-type(1) {
@@ -280,7 +299,7 @@ section#products {
 
 .products-text__container-wrapper {
   width: 100%;
-  height: 44.2rem;
+  /* height: 44.2rem; */
   /* margin: 10rem auto; */
   border-radius: var(--border-radius);
   border: var(--soft-borders);
@@ -290,7 +309,7 @@ section#products {
 /* CONTAINER WITH SERVICES/PRODUCTS DESCRIPTORS */
 .products-text__container-wrapper:nth-of-type(1) {
   width: 100%;
-  height: 42rem;
+  /* height: 42rem; */
   grid-row: 1 / 2;
   background-color: #ecf8dd;
   display: flex;
@@ -302,7 +321,7 @@ section#products {
 /* NOTE: REFACTORE THE REPETITIVE PROPERTIES AND ONLY SET WITH :nth-of-type() THE GRID ROW  */
 .products-text__container-wrapper:nth-of-type(2) {
   width: 100%;
-  height: 42rem;
+  /* height: 42rem; */
   grid-row: 2 / -1;
   background-color: #ecf8dd;
   display: flex;
