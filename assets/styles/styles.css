@@ -308,9 +308,19 @@ section#products {
   width: 100%;
   /* height: 44.2rem; */
   /* margin: 10rem auto; */
+  padding: 0 2rem;
   border-radius: var(--border-radius);
-  border: var(--soft-borders);
+  /* border: var(--soft-borders); */
   box-shadow: var(--box-shadows);
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly ;
+  background-color: #cda5f3;
+}
+
+.products__name {
+  margin-bottom: 2rem;
 }
 
 /* CONTAINER WITH SERVICES/PRODUCTS DESCRIPTORS */
