@@ -9,6 +9,11 @@ ScrollReveal().reveal('.products__name' ,{
   origin: 'right'
 });
 
+ScrollReveal().reveal('.product-descriptor' ,{ 
+  distance: '100px',
+  origin: 'right'
+});
+
 // Set the fourth, fifth and sixth products__name with other distance
 
 
