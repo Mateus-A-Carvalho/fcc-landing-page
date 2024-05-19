@@ -143,34 +143,47 @@
 
       <!-- Form Section -->
       <section class="form__section">
+
         <form id="form" class="form" action="https://www.freecodecamp.com/email-submit" method="post">
+
           <h2 class="form__heading">Book a time with us</h2>
-<fieldset class="fieldset">
-              <label for="email" class="email-label">Email:</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required>
-</fieldset>
 
-<fieldset class="fieldset">
-              <label for="input-gender">
-                <input type="radio" name="gender-input" id="input-gender01">Male</input>
-              </label>
+          <!-- Email fieldset -->
+          <fieldset class="fieldset">
+            <legend class="legend">Your best email</legend>
 
-              <label for="input-gender">
-                <input type="radio" name="gender-input" id="input-gender02">Female</input>
-              </label>
+                <input type="email" id="email" name="email" class="email-input" required>
+                <label for="email" class="email-label">Email:</label>
 
-              <label for="input-gender">
-                <input type="radio" name="gender-input" id="input-gender03">Other</input>
-              </label>
-</fieldset>
-            
-<fieldset class="fieldset">
-              <label for="input-date">Book a time with us</label>
-              <input type="date" name="" id="input-date">
-</fieldset>
+          </fieldset>
+
+          <!-- Gender fildset -->
+          <fieldset class="fieldset"> 
+            <legend class="legend">What's your gender?</legend>
+                        <label for="input-gender">
+                          <input type="radio" name="gender-input" id="input-gender01">Male</input>
+                        </label>
+
+                        <label for="input-gender">
+                          <input type="radio" name="gender-input" id="input-gender02">Female</input>
+                        </label>
+
+                        <label for="input-gender">
+                          <input type="radio" name="gender-input" id="input-gender03">Other</input>
+                        </label>
+          </fieldset>
+          
+          <!-- Date fieldset -->
+          <fieldset class="fieldset">
+            <legend class="legend">Choose a day to meet us</legend>
+                        <label for="input-date">Book a time with us</label>
+                        <input type="date" name="" id="input-date">
+          </fieldset>
 
             <input type="submit" id="submit" value="submit">
+
         </form>
+
       </section>
 
   </main>  

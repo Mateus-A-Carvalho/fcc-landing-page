@@ -17,7 +17,7 @@
   --preview-img-border-radius: 9999px;
   --box-shadows: 
     rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, 
-    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px; 
   --border: 3px solid rgb(23, 23, 23, .7);
   --soft-borders: 1px solid rgb(23, 23, 23, .3);
   --header-height: 8rem;
@@ -364,7 +364,7 @@ form.form {
   display: flex;
   flex-flow: column wrap;  
   justify-content: space-between;
-  background-color: rgba(181, 201, 154, 0.842);
+  background-color: rgba(181, 201, 154, 0.8);
   border-radius: var(--border-radius);
   padding: 2.5rem 5rem;
   text-align: center;
@@ -376,11 +376,54 @@ h2.form__heading {
 }
 
 fieldset.fieldset {
-  display: flex;
-  border: none;
+  border: var(--border);
+  background-color: rgba(181, 201, 154);
+  box-shadow: .5rem -.5rem .5rem rgba(0, 0, 0, .3);
 }
 
-form input
+fieldset.fieldset:nth-of-type(1) {
+  padding: 2rem 1.5rem 1rem 1.5rem;
+}
+
+.legend {
+  display: block;
+  font-size: 1.1em;
+  background: rgb(247, 247, 247);
+  padding: .5rem 2rem;
+  border-radius: 9999px
+}
+
+/* Email label and input settings */
+input.email-input {
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+}
+
+label.email-label {
+  font-weight: 900;
+  font-style: italic;
+  position: relative;
+  bottom: 27px;
+  left: -230px;
+  transition: 500ms ease-in-out;
+  pointer-events: none;
+}
+
+input.email-input {
+  padding: 0.5rem;
+  font-style: italic;
+  box-shadow: .3rem -.3rem .3rem rgba(0, 0, 0, .3);
+  border-radius: .5rem;
+}
+
+input.email-input:focus ~ label.email-label,
+input.email-input:valid ~ label.email-label {
+  bottom: 60px;
+  left: -240px;
+  font-size: 1.4rem;
+}
+/* Email label and input settings */
 
 /* FORM SECTION */
 
