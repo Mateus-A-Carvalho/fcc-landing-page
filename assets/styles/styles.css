@@ -429,6 +429,25 @@ input.email-input:valid ~ label.email-label {
 }
 /* Email label and input settings */
 
+/* Gender fildset settings */
+input.input-gender {
+  width: unset;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+label.label__input-gender {
+  width: 100%;
+  font-size: 1.2em;
+  font-weight: 900;
+  display: block;
+  text-align: left;
+  margin: 1rem 0 1rem .5rem;
+}
+
+/* Gender fildset settings */
+
 /* FORM SECTION */
 
 /* EFFECTS/ANIMATIONS */
