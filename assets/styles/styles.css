@@ -372,7 +372,8 @@ form.form {
 }
 
 h2.form__heading {
-  font-style: italic;
+  font-style: bold;
+  font-size: 2em;
 }
 
 fieldset.fieldset {
@@ -398,7 +399,10 @@ input.email-input {
   text-align: left;
   width: 100%;
   margin: 0 auto;
+  font-family: var(--nav__link-font);
+  font-style: normal;
 }
+
 
 label.email-label {
   font-weight: 900;
