@@ -359,13 +359,13 @@ section.form__section {
 }
 
 form.form {
-  height: 100%;
+  height: auto;
   width: 50%;
   margin: 0 auto;
   display: flex;
   flex-flow: column wrap;  
   justify-content: space-between;
-  background-color: rgba(181, 201, 154, 0.8);
+  background-color: rgba(181, 201, 154, 0.9);
   border-radius: var(--border-radius);
   padding: 2.5rem 5rem;
   text-align: center;
@@ -375,6 +375,8 @@ form.form {
 h2.form__heading {
   font-style: bold;
   font-size: 2em;
+  margin: 1rem 0 2rem 0;  
+  letter-spacing: .5rem;
 }
 
 fieldset.fieldset {
@@ -433,6 +435,7 @@ input.email-input:valid ~ label.email-label {
 .fieldset-wrapper {
   display: flex;
   height: 50%;
+  margin: 2rem 0;  
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
@@ -443,7 +446,7 @@ input.email-input:valid ~ label.email-label {
 fieldset.gender__fieldset,
 fieldset.date__fieldset {
   width: 50%;
-  height: 80%;
+  height: 100%;
 }
 
 /* Gender fildset settings */
@@ -483,6 +486,15 @@ label.label__input-gender {
   box-shadow: var(--box-shadows);
 }
 /* Date fieldset settings */
+
+/* Submit btn settins */
+.btn-submit {
+  display: block;
+  width: 50%;
+  height: 5rem;
+  margin: 0 auto;
+}
+/* Submit btn settins */
 
 /* FORM SECTION */
 
