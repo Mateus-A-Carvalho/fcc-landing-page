@@ -493,7 +493,20 @@ label.label__input-gender {
   width: 50%;
   height: 5rem;
   margin: 0 auto;
+  border: .3rem solid black;
+  transition: all 300ms ease-in-out;
+  background-color: rgba(255, 255, 255, 0.673);
+  font-size: 1.5em;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 black;
+  text-transform: uppercase;
 }
+
+.btn-submit:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+};
 /* Submit btn settins */
 
 /* FORM SECTION */
