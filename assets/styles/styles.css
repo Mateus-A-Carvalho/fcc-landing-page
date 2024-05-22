@@ -60,7 +60,7 @@ html {
 
 body {
   font-size: 1.8rem;
-  height: 100%;
+  height: auto;
   min-width: 1024px;
   font-family: var(--body-font);
 }
@@ -353,36 +353,53 @@ section#products {
 
 /* FORM SECTION */
 section.form__section {
-  background: url('https://images.unsplash.com/photo-1582582450303-48cc2cfa2c43?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
-  padding: 10rem 0;
-  padding-bottom: 5rem;
+  background: url('../img/form-bgc-pattern-full.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.img-wrapper {
+  margin-top: 13rem;
+  width: 50%;
+  height: 100vh;
+}
+
+.img-form {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
 }
 
 form.form {
   height: auto;
   width: 50%;
-  margin: 0 auto;
+  margin: 25rem 0 0 4rem;
   display: flex;
   flex-flow: column wrap;  
   justify-content: space-between;
-  background-color: rgba(181, 201, 154, 0.9);
-  border-radius: var(--border-radius);
+  background-color: rgba(230, 230, 230, 0.95);
+  border-radius: .5rem;
   padding: 2.5rem 5rem;
   text-align: center;
   box-shadow: 0 0 .4rem rgba(0, 0, 0, .3);
+  font-size: .8em;
 }
 
 h2.form__heading {
-  font-style: bold;
   font-size: 2em;
   margin: 1rem 0 2rem 0;  
-  letter-spacing: .5rem;
+  text-align: left;
 }
 
 fieldset.fieldset {
-  border: var(--border);
-  background-color: rgba(181, 201, 154);
-  box-shadow: .5rem -.5rem .5rem rgba(0, 0, 0, .3);
+  border: none;
+  background-color: #DDDDDD;
+  /* box-shadow: .5rem -.5rem .5rem rgba(0, 0, 0, .3); */
 }
 
 fieldset.fieldset:nth-of-type(1) {
@@ -392,9 +409,10 @@ fieldset.fieldset:nth-of-type(1) {
 .legend {
   display: block;
   font-size: 1.1em;
-  background: rgb(247, 247, 247);
+  text-align: left;
+  /* background: rgb(247, 247, 247); */
   padding: .5rem 2rem;
-  border-radius: 9999px
+  border-radius: .5rem
 }
 
 /* Email label and input settings */
@@ -429,7 +447,6 @@ input.email-input:valid ~ label.email-label {
   left: -240px;
   font-size: 1.4rem;
 }
-/* Email label and input settings */
 
 /* Fieldset wrapper settings */
 .fieldset-wrapper {
@@ -441,7 +458,6 @@ input.email-input:valid ~ label.email-label {
   justify-content: space-between;
   gap: 2rem;
 }
-/* Fieldset wrapper settings */
 
 fieldset.gender__fieldset,
 fieldset.date__fieldset {
@@ -465,7 +481,6 @@ label.label__input-gender {
   text-align: left;
   margin: 1rem 0 1rem .5rem;
 }
-/* Gender fildset settings */
 
 /* Date fieldset settings */
 .date__fieldset {
