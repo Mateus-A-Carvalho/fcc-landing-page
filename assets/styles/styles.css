@@ -392,7 +392,6 @@ form.form {
 
 h2.form__heading {
   font-size: 2em;
-  margin: 1rem 0 2rem 0;  
   text-align: left;
 }
 
@@ -400,6 +399,7 @@ h2.form__heading {
   margin: 2rem 0;
 }
 
+/* REMEMBER DO REFACOTR THIS PART */
 .input-wrapper:nth-of-type(1) {
   display: flex;
   flex-flow: row nowrap;
@@ -414,6 +414,12 @@ h2.form__heading {
   border: 1px solid black;
 }
 
+.input-wrapper:nth-of-type(2),
+.input-wrapper:nth-of-type(3) {
+  padding: 2rem 1rem;
+}
+/* REMEMBER DO REFACOTR THIS PART */
+
 .input-names__wrapper {
   width: 50%;
 }
@@ -424,8 +430,8 @@ h2.form__heading {
 }
 
 .input-label__name {
+  width: max-content;
   position: relative;
-  width: 100%;
   text-align: left;
   top: 20px;
   left: 5px;
@@ -436,36 +442,43 @@ h2.form__heading {
 }
 
 /* Email label and input settings */
-input.email-input {
-  text-align: left;
-  width: 100%;
-  margin: 0 auto;
-  font-family: var(--nav__link-font);
-  font-style: normal;
+.label-email,
+.input-email {
+  display: block;
 }
 
-label.email-label {
-  font-weight: 900;
-  font-style: italic;
+label.label-email {
+  width: max-content;
   position: relative;
-  bottom: 27px;
-  left: -230px;
+  top: 20px;
+  left: 5px;
+  text-align: left;
   transition: 300ms ease-in-out;
-  pointer-events: none;
 }
 
-input.email-input {
-  padding: 0.5rem;
-  font-style: italic;
-  box-shadow: .3rem -.3rem .3rem rgba(0, 0, 0, .3);
-  border-radius: .5rem;
+input.input-email {
+  width: 100%;
 }
 
-input.email-input:focus ~ label.email-label,
-input.email-input:valid ~ label.email-label {
+input.input-email:focus ~ label.label-email,
+input.input-email:valid ~ label.label-email {
   bottom: 60px;
   left: -240px;
   font-size: 1.4rem;
+}
+
+.label-datatime, 
+.input-datatime {
+  display: block;
+}
+
+.label-datatime {
+  width: 100%
+}
+
+.input-datatime {
+  width: 50%;
+  margin: 0 auto;
 }
 
 
