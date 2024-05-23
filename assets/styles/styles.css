@@ -9,7 +9,6 @@
   --body-font: 'Lora', Sans-serif;
   --nav__link-font: 'Raleway', sans-serif;
   --logo-font: 'Playfair Display', Sans-serif;
-  /* FONT VARIABLES */
 
   /* CONTAINER VARIABLES */
   --border-radius: 1.5rem 0 1.5rem 0;
@@ -26,16 +25,21 @@
   --btn-prev-border: 0 1.5rem 1.5rem 0;
   --btn-next-border: 1.5rem 0 0 1.5rem;
   --text-shadow: 3px -2px 7px rgba(0, 0, 0, .3);
-  /* CONTAINER VARIABLES */
 
   /* TRANSITIONS AND ANIMATIONS VARIABLES */
   --transition-timing: 250ms ease-in-out;
   --link-active-timing: opacity 250ms ease-in-out;
-  /* TRANSITIONS AND ANIMATIONS VARIABLES */
 
   /* POSITION VARIABLES */
   --margin-containers: 100px;
-  /* POSITION VARIABLES */
+
+  /* INPUT VARIABLES */
+  --input__box-shadows: 0 0 .4rem rgba(0, 0, 0, .4);
+  --input-valid__box-shadows: 0 0 1rem rgba(23, 236, 62, 0.85);
+  --input-invalid__box-shadows: 0 0 1rem rgba(251, 2, 2, 0.781);
+  --input-focused__box-shadows: 0 0 1rem rgba(4, 70, 251, 0.85);
+  --input-height: 3rem;
+  --input-bdrs: 1rem;
 }
 
 /* UTILITY CLASSES */
@@ -387,7 +391,6 @@ form.form {
   padding: 2.5rem;
   text-align: center;
   box-shadow: 0 0 .4rem rgba(0, 0, 0, .3);
-  font-size: .9em;
 }
 
 h2.form__heading {
@@ -396,7 +399,7 @@ h2.form__heading {
 }
 
 .input-wrapper {
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
 }
 
 /* REMEMBER DO REFACOTR THIS PART */
@@ -405,8 +408,8 @@ h2.form__heading {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid black;
-  padding: 3rem 1rem;
+  /* border: 1px solid black; */
+  padding: 3rem 0;
   gap: 2rem;
 }
 
@@ -416,29 +419,63 @@ h2.form__heading {
 
 .input-wrapper:nth-of-type(2),
 .input-wrapper:nth-of-type(3) {
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 /* REMEMBER DO REFACOTR THIS PART */
 
 .input-names__wrapper {
   width: 50%;
+  height: 25px;
 }
 
 .input-label__name,
 .input-name {
   display: block;
+  transition: 300ms ease-in-out;
 }
 
 .input-label__name {
   width: max-content;
   position: relative;
   text-align: left;
-  top: 20px;
+  top: -25px;
   left: 5px;
+  font-style: italic;
 }
 
 .input-name {
   width: 100%;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  height: var(--input-height);
+  border-radius: var(--input-bdrs);
+  box-shadow: var(--input__box-shadows);
+}
+
+/* NOTE: REFACTOR MAKING A GOOD CALC TO WORK WITH VARIABLES */
+/* Input-name animations */
+input.first-name:focus,
+input.last-name:focus {
+  box-shadow: var(--input-focused__box-shadows);
+}
+
+input.first-name:valid,
+input.last-name:valid {
+  box-shadow: var(--input-valid__box-shadows);
+}
+
+/* Label-name animations */
+input.first-name:focus ~ label.first-name__label,
+input.first-name:valid ~ label.first-name__label {
+  top: -50px;
+  font-size: .8em;
+}
+
+input.last-name:focus ~ label.last-name__label,
+input.last-name:valid ~ label.last-name__label {
+  top: -50px;
+  font-size: .8em;
 }
 
 /* Email label and input settings */
@@ -447,7 +484,7 @@ h2.form__heading {
   display: block;
 }
 
-label.label-email {
+.label-email {
   width: max-content;
   position: relative;
   top: 20px;
@@ -462,8 +499,8 @@ input.input-email {
 
 input.input-email:focus ~ label.label-email,
 input.input-email:valid ~ label.label-email {
-  bottom: 60px;
-  left: -240px;
+  top: 0;
+  left: 0;
   font-size: 1.4rem;
 }
 
