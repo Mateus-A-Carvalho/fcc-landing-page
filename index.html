@@ -148,41 +148,32 @@
 
           <h2 class="form__heading">Contact us</h2>
 
-          <!-- Email fieldset -->
-          <fieldset class="fieldset email__fieldset">
-            <legend class="legend">Your best email</legend>
+          <div class="input-wrapper">
 
-                <input type="email" id="email" name="email" class="email-input" required>
-                <label for="email" class="email-label">Email:</label>
+            <div class="input-names__wrapper">
+              <label for="first-name" class="input-label__name">First Name</label>
+              <input type="text" id="first-name" class="input-name first-name" required>
+            </div>
 
-          </fieldset>
-
-          <div class="fieldset-wrapper">
-            
-            <!-- Gender fildset -->
-            <fieldset class="fieldset gender__fieldset">
-              <legend class="legend">What's your gender?</legend>
-                          <label class="label__input-gender for="input-gender01">
-                            <input type="radio" name="gender-input" class="input-gender" id="input-gender01">Male</input>
-                          </label>
-                          <label class="label__input-gender for="input-gender02">
-                            <input type="radio" name="gender-input" class="input-gender" id="input-gender02">Female</input>
-                          </label>
-                          <label class="label__input-gender for="input-gender03">
-                            <input type="radio" name="gender-input" class="input-gender" id="input-gender03">Other</input>
-                          </label>
-            </fieldset>
-            
-            <!-- Date fieldset -->
-            <fieldset class="fieldset date__fieldset">
-              <legend class="legend">Meet us</legend>
-                          <label for="input-date" class="label__input-date">Book a time with us:</label>
-                          <input type="date" name="" id="input-date" class="input-date">
-            </fieldset>
+            <div class="input-names__wrapper">
+              <label for="last-name" class="input-label__name">Last Name</label>
+              <input type="text" id="last-name" class="input-name last-name" required>
+            </div>
 
           </div>
 
-            <input type="submit" id="submit" value="submit" class="btn-submit">
+          <div class="input-wrapper">
+            <label for="input-email" class="label-email">Your Best Email</label>
+            <input type="email" name="" class="input-email" id="input-email" required>
+          </div>
+
+          <div class="input-wrapper">
+            <label for="input-datatime">Meet Us</label>
+            <input type="datetime-local" name="" id="input-datatime">
+          </div>
+          
+
+          <input type="submit" id="submit" value="submit" class="btn-submit">
 
         </form>
         

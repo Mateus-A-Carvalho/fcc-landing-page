@@ -378,16 +378,16 @@ section.form__section {
 form.form {
   height: auto;
   width: 50%;
-  margin: 25rem 0 0 4rem;
+  margin: 20rem 0 0 4rem;
   display: flex;
-  flex-flow: column wrap;  
-  justify-content: space-between;
+  flex-flow: column nowrap;  
+  justify-content: space-evenly;
   background-color: rgba(230, 230, 230, 0.95);
   border-radius: .5rem;
-  padding: 2.5rem 5rem;
+  padding: 2.5rem;
   text-align: center;
   box-shadow: 0 0 .4rem rgba(0, 0, 0, .3);
-  font-size: .8em;
+  font-size: .9em;
 }
 
 h2.form__heading {
@@ -396,23 +396,43 @@ h2.form__heading {
   text-align: left;
 }
 
-fieldset.fieldset {
-  border: none;
-  background-color: #DDDDDD;
-  /* box-shadow: .5rem -.5rem .5rem rgba(0, 0, 0, .3); */
+.input-wrapper {
+  margin: 2rem 0;
 }
 
-fieldset.fieldset:nth-of-type(1) {
-  padding: 2rem 1.5rem 1rem 1.5rem;
+.input-wrapper:nth-of-type(1) {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 3rem 1rem;
+  gap: 2rem;
 }
 
-.legend {
+.input-wrapper:not(:nth-of-type(1)) {
+  border: 1px solid black;
+}
+
+.input-names__wrapper {
+  width: 50%;
+}
+
+.input-label__name,
+.input-name {
   display: block;
-  font-size: 1.1em;
+}
+
+.input-label__name {
+  position: relative;
+  width: 100%;
   text-align: left;
-  /* background: rgb(247, 247, 247); */
-  padding: .5rem 2rem;
-  border-radius: .5rem
+  top: 20px;
+  left: 5px;
+}
+
+.input-name {
+  width: 100%;
 }
 
 /* Email label and input settings */
@@ -448,59 +468,6 @@ input.email-input:valid ~ label.email-label {
   font-size: 1.4rem;
 }
 
-/* Fieldset wrapper settings */
-.fieldset-wrapper {
-  display: flex;
-  height: 50%;
-  margin: 2rem 0;  
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-fieldset.gender__fieldset,
-fieldset.date__fieldset {
-  width: 50%;
-  height: 18rem;
-}
-
-/* Gender fildset settings */
-input.input-gender {
-  width: unset;
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 1rem;
-}
-
-label.label__input-gender {
-  width: 100%;
-  display: block;
-  font-size: 1.2em;
-  font-weight: 900;
-  text-align: left;
-  margin: 1rem 0 1rem .5rem;
-}
-
-/* Date fieldset settings */
-.date__fieldset {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.label__input-date {
-  font-weight: 900;
-  margin-bottom: 1.5rem;
-}
-
-.input-date {
-  padding: .5rem;
-  border-radius: 1rem;
-  box-shadow: var(--box-shadows);
-}
-/* Date fieldset settings */
 
 /* Submit btn settins */
 .btn-submit {
