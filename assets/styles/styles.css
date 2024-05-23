@@ -380,7 +380,7 @@ section.form__section {
 }
 
 form.form {
-  height: auto;
+  height: 50rem;
   width: 50%;
   margin: 20rem 0 0 4rem;
   display: flex;
@@ -413,8 +413,8 @@ h2.form__heading {
   gap: 2rem;
 }
 
-.input-wrapper:not(:nth-of-type(1)) {
-  border: 1px solid black;
+.input-wrapper:nth-of-type(2) {
+  /* border: 1px solid black; */
 }
 
 .input-wrapper:nth-of-type(2),
@@ -429,12 +429,16 @@ h2.form__heading {
 }
 
 .input-label__name,
-.input-name {
+.input-name,
+.input-datatime,
+.input-label__name,
+.label-email {
   display: block;
   transition: 300ms ease-in-out;
 }
 
-.input-label__name {
+.input-label__name,
+.label-email {
   width: max-content;
   position: relative;
   text-align: left;
@@ -443,7 +447,9 @@ h2.form__heading {
   font-style: italic;
 }
 
-.input-name {
+.input-name,
+.input-email,
+.input-datatime {
   width: 100%;
   outline: none;
   border: none;
@@ -456,12 +462,14 @@ h2.form__heading {
 /* NOTE: REFACTOR MAKING A GOOD CALC TO WORK WITH VARIABLES */
 /* Input-name animations */
 input.first-name:focus,
-input.last-name:focus {
+input.last-name:focus,
+input.input-email:focus {
   box-shadow: var(--input-focused__box-shadows);
 }
 
 input.first-name:valid,
-input.last-name:valid {
+input.last-name:valid,
+input.input-email:valid {
   box-shadow: var(--input-valid__box-shadows);
 }
 
@@ -478,31 +486,37 @@ input.last-name:valid ~ label.last-name__label {
   font-size: .8em;
 }
 
-/* Email label and input settings */
-.label-email,
-.input-email {
-  display: block;
+input.input-email:focus ~ label.label-email,
+input.input-email:valid ~ label.label-email {
+  top: -50px;
+  font-size: .8em;
 }
 
-.label-email {
+/* Email label and input settings */
+/* .label-email,
+.input-email {
+  display: block;
+} */
+
+/* .label-email {
   width: max-content;
   position: relative;
-  top: 20px;
+  top: -25px;
   left: 5px;
   text-align: left;
   transition: 300ms ease-in-out;
-}
+} */
 
 input.input-email {
   width: 100%;
 }
-
+/* 
 input.input-email:focus ~ label.label-email,
 input.input-email:valid ~ label.label-email {
   top: 0;
   left: 0;
   font-size: 1.4rem;
-}
+} */
 
 .label-datatime, 
 .input-datatime {
