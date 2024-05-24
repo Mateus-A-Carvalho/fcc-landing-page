@@ -399,7 +399,7 @@ h2.form__heading {
 }
 
 .input-wrapper {
-  margin: 0 0 2rem 0;
+  /* margin: 0 0 2rem 0; */
 }
 
 /* REMEMBER DO REFACOTR THIS PART */
@@ -409,36 +409,44 @@ h2.form__heading {
   align-items: center;
   justify-content: space-between;
   /* border: 1px solid black; */
-  padding: 3rem 0;
+  padding: 2rem 0;
   gap: 2rem;
 }
 
-.input-wrapper:nth-of-type(2) {
-  /* border: 1px solid black; */
+
+.input-wrapper:nth-of-type(3) {
+  padding: 0 0 3rem 0;
 }
 
-.input-wrapper:nth-of-type(2),
+/* .input-wrapper:nth-of-type(2),
 .input-wrapper:nth-of-type(3) {
   padding: 2rem 0;
-}
+} */
 /* REMEMBER DO REFACOTR THIS PART */
 
-.input-names__wrapper {
+.input-names__wrapper,
+.input-datatime__wrapper,
+.input-tel__wrapper{
   width: 50%;
   height: 25px;
 }
 
+
+/* Label settings */
 .input-label__name,
 .input-name,
 .input-datatime,
-.input-label__name,
-.label-email {
+.label-datatime, 
+.input-tel,
+.label-email,
+.label-input__tel {
   display: block;
   transition: 300ms ease-in-out;
 }
 
 .input-label__name,
-.label-email {
+.label-email,
+.label-input__tel {
   width: max-content;
   position: relative;
   text-align: left;
@@ -447,9 +455,11 @@ h2.form__heading {
   font-style: italic;
 }
 
+/* input settings */
 .input-name,
 .input-email,
-.input-datatime {
+.input-datatime,
+.input-tel {
   width: 100%;
   outline: none;
   border: none;
@@ -463,8 +473,10 @@ h2.form__heading {
 /* Input-name animations */
 input.first-name:focus,
 input.last-name:focus,
-input.input-email:focus {
+input.input-email:focus,
+input.input-tel:focus {
   box-shadow: var(--input-focused__box-shadows);
+  background-color: rgba(235, 235, 235, 0.9)
 }
 
 input.first-name:valid,
@@ -473,64 +485,54 @@ input.input-email:valid {
   box-shadow: var(--input-valid__box-shadows);
 }
 
-/* Label-name animations */
+/* TODO: After set Regex to input-tel, add this input in this animations with :valid */
+
+/* input and label animations */
 input.first-name:focus ~ label.first-name__label,
-input.first-name:valid ~ label.first-name__label {
-  top: -50px;
-  font-size: .8em;
-}
-
 input.last-name:focus ~ label.last-name__label,
-input.last-name:valid ~ label.last-name__label {
-  top: -50px;
-  font-size: .8em;
-}
-
 input.input-email:focus ~ label.label-email,
+input.input-tel:focus ~ label.label-input__tel,
+input.first-name:valid ~ label.first-name__label,
+input.last-name:valid ~ label.last-name__label,
 input.input-email:valid ~ label.label-email {
   top: -50px;
   font-size: .8em;
 }
-
-/* Email label and input settings */
-/* .label-email,
-.input-email {
-  display: block;
-} */
-
-/* .label-email {
-  width: max-content;
-  position: relative;
-  top: -25px;
-  left: 5px;
-  text-align: left;
-  transition: 300ms ease-in-out;
-} */
 
 input.input-email {
   width: 100%;
 }
-/* 
-input.input-email:focus ~ label.label-email,
-input.input-email:valid ~ label.label-email {
-  top: 0;
-  left: 0;
-  font-size: 1.4rem;
-} */
 
-.label-datatime, 
-.input-datatime {
-  display: block;
+/* Datatime and input-tel settings */
+.input-wrapper:nth-of-type(3) {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
+.input-datatime__wrapper {
+  display: flex;
+  height: 3rem;
+  flex-flow: row nowrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 2rem; 
+}
+
+
 .label-datatime {
-  width: 100%
+  width: max-content;
+  text-align: left;
+  align-self: center;
 }
 
 .input-datatime {
   width: 50%;
-  margin: 0 auto;
 }
+
+
 
 
 /* Submit btn settins */
@@ -553,9 +555,7 @@ input.input-email:valid ~ label.label-email {
   transform: translateY(-4px) translateX(-2px);
   box-shadow: 2px 5px 0 0 black;
 };
-/* Submit btn settins */
 
-/* FORM SECTION */
 
 /* EFFECTS/ANIMATIONS */
   /* Header animations */
