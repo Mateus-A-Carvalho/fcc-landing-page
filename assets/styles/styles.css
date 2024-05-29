@@ -408,7 +408,6 @@ h2.form__heading {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  /* border: 1px solid black; */
   padding: 2rem 0;
   gap: 2rem;
 }
@@ -436,7 +435,7 @@ h2.form__heading {
 .input-label__name,
 .input-name,
 .input-datatime,
-.label-datatime, 
+/* .label-datatime,  */
 .input-tel,
 .label-email,
 .label-input__tel {
@@ -513,22 +512,14 @@ input.input-email {
 }
 
 .input-datatime__wrapper {
-  /* display: flex; */
-  height: 3rem;
-  /* flex-flow: row nowrap; */
-  align-items: start;
-  /* justify-content: space-between; */
-  gap: 2rem; 
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
 }
 
-
 .label-datatime {
-  width: unset;
-  text-align: center;
-  align-self: center;
-  font-style: italic;
-  position: relative;
-  margin-bottom: 1rem;
+  position: absolute;
+  top: -2.5rem;
 }
 
 .input-datatime {
