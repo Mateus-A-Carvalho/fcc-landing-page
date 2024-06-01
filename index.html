@@ -71,21 +71,27 @@
 
         <!-- Sliders container -->
         <div class="products-img__container-wrapper">
-          <img src="https://storage.needpix.com/rsynced_images/hairstyle-4057094_1280.jpg" class="product__photo" id="product__photo">
-          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product__photo" id="product__photo">
-          <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product__photo" id="product__photo">
+
+         <div class="img-slider" id="img-slider-01"> 
+           <img src="https://storage.needpix.com/rsynced_images/hairstyle-4057094_1280.jpg" class="product__photo first-container-product__photo" id="first-container-product__photo01">
+           <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product__photo first-container-product__photo" id="first-container-product__photo02">
+           <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product__photo first-container-product__photo" id="first-container-product__photo03">
+         </div>
           
-          <i class="fa-solid fa-angles-right btn btn-next" id="btn-next"></i>
-          <i class="fa-solid fa-angles-left btn btn-prev" id="btn-prev"></i>
+          <i class="fa-solid fa-angles-right btn btn-next first-container__btn-next"  id="first-container__btn-next"></i>
+          <i class="fa-solid fa-angles-left btn btn-prev first-container__btn-prev"  id="first-container__btn-prev"></i>
         </div>
 
         <div class="products-img__container-wrapper">
-          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product__photo" id="product__photo">
-          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product__photo" id="product__photo">
-          <img src="https://www.troisbeaute.com.br/wp-content/uploads/2020/07/istock-1180649860-1024x683.jpg" class="product__photo" id="product__photo">
 
-          <i class="fa-solid fa-angles-right btn btn-next" id="btn-next"></i>
-          <i class="fa-solid fa-angles-left btn btn-prev" id="btn-prev"></i>
+          <div class="img-slider" id="img-slider-02">
+            <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product__photo second-container-product__photo" id="second-container-product__photo-01">
+            <img src="https://images.unsplash.com/photo-157 0172619644-dfd03ed5d881?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product__photo second-container-product__photo" id="second-container-product__photo-02">
+            <img src="https://www.troisbeaute.com.br/wp-content/uploads/2020/07/istock-1180649860-1024x683.jpg" class="product__photo second-container-product__photo" id="second-container-product__photo-03">
+          </div>
+
+          <i class="fa-solid fa-angles-right btn btn-next second-container__btn-next" id="second-container__btn-next"></i>
+          <i class="fa-solid fa-angles-left btn btn-prev second-container__btn-prev" id="second-container__btn-prev"></i>
         </div>
         
         <!-- Products/services descriptions container -->
@@ -182,7 +188,7 @@
           </div>
           
 
-          <input type="submit" id="submit" value="submit" class="btn-submit">
+          <button type="submit" id="submit" value="submit" class="btn-submit">Submit</button>
 
         </form>
         
