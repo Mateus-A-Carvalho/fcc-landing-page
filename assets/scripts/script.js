@@ -1,8 +1,10 @@
 const bodyEl = document.querySelector('body');
-
 // Img containers
 const firstImgSlider = document.querySelector('#img-slider-01');
 const secondImgSlider = document.querySelector('#img-slider-02');
+
+// Getting the width of container slider;
+const imgWidthValue = firstImgSlider.offsetWidth;
 
 // Imgs id's
 const firstContainerProductsImgEl = document.querySelectorAll('.first-container-product__photo');
@@ -17,6 +19,7 @@ const firstBtnPrevEl = document.querySelector('#first-container__btn-prev');
 const secondBtnNextEl = document.querySelector('#second-container__btn-next');
 const secondBtnPrevEl = document.querySelector('#second-container__btn-prev');
 
+// Img control
 let firstCurrentImg = 1;
 let secondCurrentImg = 1;
 
@@ -51,7 +54,7 @@ function updateImg(containerNumber, btnType) {
         firstCurrentImg = firstContainerProductsImgEl.length;
       }
 
-      firstImgSlider.style.transform = `translateX(-${(firstCurrentImg - 1) * 630}px)`;
+      firstImgSlider.style.transform = `translateX(-${(firstCurrentImg - 1) * imgWidthValue}px)`;
       
     }
 
@@ -65,7 +68,7 @@ function updateImg(containerNumber, btnType) {
         firstCurrentImg = firstContainerProductsImgEl.length;
       }
 
-      firstImgSlider.style.transform = `translateX(-${(firstCurrentImg - 1) * 630}px)`;
+      firstImgSlider.style.transform = `translateX(-${(firstCurrentImg - 1) * imgWidthValue}px)`;
       
       // console.log(firstCurrentImg);
     }
@@ -80,7 +83,7 @@ function updateImg(containerNumber, btnType) {
         secondCurrentImg = secondContainerProductsImgEl.length;
       }
 
-      secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * 630}px)`;
+      secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * imgWidthValue}px)`;
       
       // console.log(firstCurrentImg);
     }
@@ -95,7 +98,7 @@ function updateImg(containerNumber, btnType) {
         secondCurrentImg = secondContainerProductsImgEl.length;
       }
 
-      secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * 630}px)`;
+      secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * imgWidthValue}px)`;
       
       // console.log(firstCurrentImg);
     }
