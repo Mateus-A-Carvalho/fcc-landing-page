@@ -47,7 +47,6 @@
   -webkit-animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
           animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
-/* UTILITY CLASSES */
 
 * {
   margin: 0;
@@ -161,7 +160,6 @@ div h1.logo__heading {
 .hero-link {
   text-decoration: none;
 }
-/* NAVBAR SETTINGS */
 
 main {
   height: auto;
@@ -255,7 +253,7 @@ section#products {
 
 .products-img__container-wrapper,
 .products-text__container-wrapper {
-  margin: calc(1.5rem) auto;
+  margin: 1.5rem auto;
   height: 80vh;
 }
 
@@ -273,7 +271,6 @@ section#products {
 }
 
 .products-img__container-wrapper {
-  /* border: 1px solid #000; */
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -319,16 +316,14 @@ section#products {
 
 .products-text__container-wrapper {
   width: 100%;
-  /* height: 44.2rem; */
-  /* margin: 10rem auto; */
   padding: 0 2rem;
   border-radius: var(--border-radius);
-  /* border: var(--soft-borders); */
   box-shadow: var(--box-shadows-white);
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-evenly ;
+  justify-content: space-evenly;
+  align-items: start;
   background-color: #cda5f3;
   text-shadow: var(--text-shadow);
 }
@@ -339,28 +334,13 @@ section#products {
 
 /* CONTAINER WITH SERVICES/PRODUCTS DESCRIPTORS */
 .products-text__container-wrapper:nth-of-type(1) {
-  width: 100%;
-  /* height: 42rem; */
   grid-row: 1 / 2;
-  background-color: #ecf8dd;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-evenly;
-  align-items:start
 }
 
-/* NOTE: REFACTORE THE REPETITIVE PROPERTIES AND ONLY SET WITH :nth-of-type() THE GRID ROW  */
 .products-text__container-wrapper:nth-of-type(2) {
-  width: 100%;
-  /* height: 42rem; */
   grid-row: 2 / -1;
-  background-color: #ecf8dd;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-evenly;
-  align-items:start}
-
-/* PRODUCTS SECTION */
+  
+}
 
 /* FORM SECTION */
 section.form__section {
@@ -406,8 +386,9 @@ h2.form__heading {
 }
 
 
-/* REMEMBER DO REFACOTR THIS PART */
-.input-wrapper:nth-of-type(1) {
+/* Input-wrapper settings */
+.input-wrapper:nth-of-type(1),
+.input-wrapper:nth-of-type(3) {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -416,31 +397,26 @@ h2.form__heading {
   gap: 2rem;
 }
 
-
 .input-wrapper:nth-of-type(3) {
   padding: 0 0 3rem 0;
 }
 
-/* .input-wrapper:nth-of-type(2),
-.input-wrapper:nth-of-type(3) {
-  padding: 2rem 0;
-} */
-/* REMEMBER DO REFACOTR THIS PART */
-
 .input-names__wrapper,
-.input-datatime__wrapper,
+.input-datetime__wrapper,
 .input-tel__wrapper{
   width: 50%;
-  height: 25px;
+  height: 2.5rem;
 }
 
 
-/* Label settings */
-.input-label__name,
+/* Input settings */
 .input-name,
-.input-datatime,
-/* .label-datatime,  */
+.input-datetime,
 .input-tel,
+
+/* Label Settings */
+.input-label__name,
+.label-datetime, 
 .label-email,
 .label-input__tel {
   display: block;
@@ -461,7 +437,7 @@ h2.form__heading {
 /* input settings */
 .input-name,
 .input-email,
-.input-datatime,
+.input-datetime,
 .input-tel {
   width: 100%;
   outline: none;
@@ -473,25 +449,26 @@ h2.form__heading {
 }
 
 /* NOTE: REFACTOR MAKING A GOOD CALC TO WORK WITH VARIABLES */
+
 /* Input-name animations */
-input.first-name:focus,
+/* input.first-name:focus,
 input.last-name:focus,
 input.input-email:focus,
 input.input-tel:focus {
   box-shadow: var(--input-focused__box-shadows);
   background-color: rgba(235, 235, 235, 0.9)
-}
+} */
 
-input.first-name:valid,
+/* input.first-name:valid,
 input.last-name:valid,
 input.input-email:valid {
   box-shadow: var(--input-valid__box-shadows);
-}
+} */
 
 /* TODO: After set Regex to input-tel, add this input in this animations with :valid */
 
 /* input and label animations */
-input.first-name:focus ~ label.first-name__label,
+/* input.first-name:focus ~ label.first-name__label,
 input.last-name:focus ~ label.last-name__label,
 input.input-email:focus ~ label.label-email,
 input.input-tel:focus ~ label.label-input__tel,
@@ -500,35 +477,22 @@ input.first-name:valid ~ label.first-name__label,
 input.last-name:valid ~ label.last-name__label,
 input.input-email:valid ~ label.label-email {
   top: -50px;
-  font-size: .8em;
-  
-}
+  font-size: .8em; 
+} */
 
-input.input-email {
-  width: 100%;
-}
-
-/* Datatime and input-tel settings */
-.input-wrapper:nth-of-type(3) {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: start;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.input-datatime__wrapper {
+/* Datetime and input-tel settings */
+.input-datetime__wrapper {
   display: flex;
   flex-flow: column nowrap;
   position: relative;
 }
 
-.label-datatime {
+.label-datetime {
   position: absolute;
   top: -2.5rem;
 }
 
-.input-datatime {
+.input-datetime {
   width: 100%;
   margin-right: 1rem;
 }
@@ -553,7 +517,6 @@ input.input-email {
   transform: translateY(-4px) translateX(-2px);
   box-shadow: 2px 5px 0 0 black;
 };
-
 
 /* EFFECTS/ANIMATIONS */
   /* Header animations */

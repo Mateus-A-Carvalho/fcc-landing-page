@@ -9,7 +9,6 @@ const imgWidthValue = firstImgSlider.offsetWidth;
 // Imgs id's
 const firstContainerProductsImgEl = document.querySelectorAll('.first-container-product__photo');
 const secondContainerProductsImgEl = document.querySelectorAll('.second-container-product__photo');
-console.log(firstContainerProductsImgEl, secondContainerProductsImgEl);
 
 // First containers btns;
 const firstBtnNextEl = document.querySelector('#first-container__btn-next');
@@ -19,7 +18,7 @@ const firstBtnPrevEl = document.querySelector('#first-container__btn-prev');
 const secondBtnNextEl = document.querySelector('#second-container__btn-next');
 const secondBtnPrevEl = document.querySelector('#second-container__btn-prev');
 
-// Img control
+// Img control;
 let firstCurrentImg = 1;
 let secondCurrentImg = 1;
 
