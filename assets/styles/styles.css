@@ -385,6 +385,9 @@ h2.form__heading {
   text-align: left;
 }
 
+label {
+  visibility: hidden;
+}
 
 /* Input-wrapper settings */
 .input-wrapper:nth-of-type(1),
