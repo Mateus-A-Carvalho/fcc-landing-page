@@ -429,6 +429,17 @@ h2.form__heading {
   height: 2.5rem;
 }
 
+/* Span settings */
+span {
+  display: block;
+  width: 100%;
+  font-size: .65em;
+  position: relative;
+  top: -1.5rem;
+  left: .5rem;
+  color:  rgba(177, 14, 3, 0.781);
+  text-align: left;
+}
 
 /* Input settings */
 .input-name,
@@ -468,36 +479,6 @@ h2.form__heading {
   border-radius: var(--input-bdrs);
   box-shadow: var(--input__box-shadows);
 }
-
-/* NOTE: REFACTOR MAKING A GOOD CALC TO WORK WITH VARIABLES */
-
-/* Input-name animations */
-/* input.first-name:focus,
-input.last-name:focus,
-input.input-email:focus,
-input.input-tel:focus {
-  
-} */
-
-/* input.first-name:valid,
-input.last-name:valid,
-input.input-email:valid {
-  box-shadow: var(--input-valid__box-shadows);
-} */
-
-/* TODO: After set Regex to input-tel, add this input in this animations with :valid */
-
-/* input and label animations */
-/* input.first-name:focus ~ label.first-name__label,
-input.last-name:focus ~ label.last-name__label,
-input.input-email:focus ~ label.label-email,
-input.input-tel:focus ~ label.label-input__tel,
-
-input.first-name:valid ~ label.first-name__label,
-input.last-name:valid ~ label.last-name__label,
-input.input-email:valid ~ label.label-email {
-  
-} */
 
 /* Datetime and input-tel settings */
 .input-datetime__wrapper {

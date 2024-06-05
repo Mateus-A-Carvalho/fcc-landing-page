@@ -15,9 +15,9 @@ const inputDatetimeEl = document.querySelector('#input-datetime');
 const inputTelEl = document.querySelector('#input-tel');
 
 
-document.addEventListener('click', () => {
-  creatingSpan();
-})
+// document.addEventListener('click', () => {
+//   creatingSpan();
+// })
 
 // Validating form;
 formEl.addEventListener('submit', (e) => {
@@ -74,16 +74,19 @@ function isEmailValid(email) {
 
 function isFirstNameValid(firstName) {
   if(!firstName) {
-    alert("Fill in your first name!");
+    creatingSpan('first name');
     return true;
   }
 }
 
 
-// TODO: Work with setTimeInterval() to erase spanEl after 3000ms;
-function creatingSpan() {
+function creatingSpan(input) {
   const spanEl = document.createElement('span');
   inputWrapperContainer.appendChild(spanEl);
+  spanEl.innerHTML = `Please, enter your ${input}`
+  setTimeout(() => {
+    spanEl.remove();
+  }, 3000)
 }
 
 function isLastNameValid(lastName) {
@@ -119,6 +122,11 @@ function inputValid(input) {
 function isInputInvalid(input) {
   input.classList.toggle('shake-horizontal');
   input.classList.toggle('input-invalid');
+
+  setTimeout(() => {
+    input.classList.toggle('shake-horizontal');
+    input.classList.toggle('input-invalid');
+  }, 3000)
 }
 
 export { 
