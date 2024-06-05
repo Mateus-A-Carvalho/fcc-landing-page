@@ -15,10 +15,6 @@ const inputDatetimeEl = document.querySelector('#input-datetime');
 const inputTelEl = document.querySelector('#input-tel');
 
 
-// document.addEventListener('click', () => {
-//   creatingSpan();
-// })
-
 // Validating form;
 formEl.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -30,6 +26,7 @@ formEl.addEventListener('submit', (e) => {
   }
   
   if(!inputLastNameEl.value) {
+    isInputInvalid(inputLastNameEl);
     isLastNameValid(inputLastNameEl.value);
     return;
   }
@@ -79,19 +76,9 @@ function isFirstNameValid(firstName) {
   }
 }
 
-
-function creatingSpan(input) {
-  const spanEl = document.createElement('span');
-  inputWrapperContainer.appendChild(spanEl);
-  spanEl.innerHTML = `Please, enter your ${input}`
-  setTimeout(() => {
-    spanEl.remove();
-  }, 3000)
-}
-
 function isLastNameValid(lastName) {
   if(!lastName) {
-    alert("Fill in your last name!");
+    creatingSpan('last name');
     return true;
   }
 }
@@ -126,6 +113,16 @@ function isInputInvalid(input) {
   setTimeout(() => {
     input.classList.toggle('shake-horizontal');
     input.classList.toggle('input-invalid');
+  }, 3000)
+}
+
+function creatingSpan(input) {
+  const spanEl = document.createElement('span');
+  inputWrapperContainer.appendChild(spanEl);
+  spanEl.innerHTML = `Please, enter your ${input}`
+  
+  setTimeout(() => {
+    spanEl.remove();
   }, 3000)
 }
 
