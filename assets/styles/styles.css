@@ -48,7 +48,7 @@
           animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
-.label-animation-focus {
+label.label-animation-focus {
   top: -50px;
   font-size: .8em; 
 }
