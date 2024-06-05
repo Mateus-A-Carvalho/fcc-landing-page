@@ -1,4 +1,7 @@
+import { labelAnimate } from './input-label-animation.js'
+
 const formEl = document.querySelector('#form');
+const inputWrapperContainer = document.querySelector('.input-names__wrapper')
 
 // First and Last name inputs elements;
 const inputFirstNameEl = document.querySelector('#first-name');
@@ -12,11 +15,16 @@ const inputDatetimeEl = document.querySelector('#input-datetime');
 const inputTelEl = document.querySelector('#input-tel');
 
 
+document.addEventListener('click', () => {
+  creatingSpan();
+})
+
 // Validating form;
 formEl.addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   if(!inputFirstNameEl.value) {
+    isInputInvalid(inputFirstNameEl);
     isFirstNameValid(inputFirstNameEl.value);
     return;
   }
@@ -71,6 +79,13 @@ function isFirstNameValid(firstName) {
   }
 }
 
+
+// TODO: Work with setTimeInterval() to erase spanEl after 3000ms;
+function creatingSpan() {
+  const spanEl = document.createElement('span');
+  inputWrapperContainer.appendChild(spanEl);
+}
+
 function isLastNameValid(lastName) {
   if(!lastName) {
     alert("Fill in your last name!");
@@ -95,6 +110,15 @@ function isPhoneNumberValid(phoneNumber) {
   }
 
   return false;
+}
+
+function inputValid(input) {
+  input.classList.toggle('input-valid');
+}
+
+function isInputInvalid(input) {
+  input.classList.toggle('shake-horizontal');
+  input.classList.toggle('input-invalid');
 }
 
 export { 

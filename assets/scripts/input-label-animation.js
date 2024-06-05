@@ -104,6 +104,6 @@ function inputFocused(input) {
   input.classList.toggle('input-focused')
 }
 
-function labelAnimate(label) {
+export function labelAnimate(label) {
   label.classList.toggle('label-animation-focus')
 }
