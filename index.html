@@ -158,21 +158,21 @@
           <div class="input-wrapper">
 
             <div class="input-names__wrapper">
-              <input type="text" id="first-name" class="input-name first-name" autocomplete="false">
-              <label for="first-name" class="input-label__name first-name__label">First Name</label>
+              <input type="text" id="first-name" class="input-name first-name" data-name="first-name" autocomplete="false">
+              <label for="first-name" class="input-label__name first-name__label" data-name="first-name">First Name</label>
             </div>
 
             <div class="input-names__wrapper">
-              <input type="text" id="last-name" class="input-name last-name" autocomplete="false">
-              <label for="last-name" class="input-label__name last-name__label">Last Name</label>
+              <input type="text" id="last-name" class="input-name last-name" data-name="last-name" autocomplete="false">
+              <label for="last-name" class="input-label__name last-name__label" data-name="last-name">Last Name</label>
             </div>
 
           </div>
 
           <!-- INPUT EMAIL -->
           <div class="input-wrapper">
-            <input type="email" name="email" class="input-email" id="email" autocomplete="false">
-            <label for="input-email" class="label-email">Your Best Email</label>
+            <input type="email" name="email" class="input-email" id="email" data-name="email" autocomplete="false" placeholder=" ">
+            <label for="input-email" class="label-email" data-name="email">Your Best Email</label>
           </div>
 
           <!-- INPUT DATE AND TEL -->
@@ -184,8 +184,8 @@
             </div>
 
             <div class="input-tel__wrapper">
-              <input type="tel" name="" id="input-tel" class="input-tel" autocomplete="false">
-              <label for="input-tel" class="label-input__tel">Phone Number</label>
+              <input type="tel" name="" id="input-tel" class="input-tel" data-name="phone-number" autocomplete="false">
+              <label for="input-tel" class="label-input__tel" data-name="phone-number">Phone Number</label>
             </div>
 
           </div>
@@ -203,9 +203,10 @@
 
   </main>  
   
+  <script type="module" src="./assets/scripts/input-label-animation.js"></script>
+  <script type="module" src="./assets/scripts/form-validate.js"></script>
   <script src="./assets/scripts/img-sliders.js"></script>
-  <script src="./assets/scripts/form-validate.js"></script>
-  <script src="./assets/scripts/scrollReveal.js"></script>
+  <script src="./assets/scripts/scroll-reveal.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 </html> 

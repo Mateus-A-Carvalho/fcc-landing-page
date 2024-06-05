@@ -48,6 +48,23 @@
           animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
+.label-animation-focus {
+  top: -50px;
+  font-size: .8em; 
+}
+
+.input-focused {
+  box-shadow: var(--input-focused__box-shadows);
+}
+
+.input-valid {
+  box-shadow: var(--input-valid__box-shadows);
+}
+
+.input-invalid {
+  box-shadow: var(--input-invalid__box-shadows);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -385,10 +402,6 @@ h2.form__heading {
   text-align: left;
 }
 
-label {
-  visibility: hidden;
-}
-
 /* Input-wrapper settings */
 .input-wrapper:nth-of-type(1),
 .input-wrapper:nth-of-type(3) {
@@ -458,8 +471,7 @@ label {
 input.last-name:focus,
 input.input-email:focus,
 input.input-tel:focus {
-  box-shadow: var(--input-focused__box-shadows);
-  background-color: rgba(235, 235, 235, 0.9)
+  
 } */
 
 /* input.first-name:valid,
@@ -479,8 +491,7 @@ input.input-tel:focus ~ label.label-input__tel,
 input.first-name:valid ~ label.first-name__label,
 input.last-name:valid ~ label.last-name__label,
 input.input-email:valid ~ label.label-email {
-  top: -50px;
-  font-size: .8em; 
+  
 } */
 
 /* Datetime and input-tel settings */

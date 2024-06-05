@@ -5,18 +5,12 @@ const inputFirstNameEl = document.querySelector('#first-name');
 const inputLastNameEl = document.querySelector('#last-name');
 
 // Input email element; 
-const emailInputEl = document.querySelector('#email');
+const inputEmailEl = document.querySelector('#email');
 
 // Input datetime and tel elements:
 const inputDatetimeEl = document.querySelector('#input-datetime');
 const inputTelEl = document.querySelector('#input-tel');
 
-/* TODO: 
-  3 - Fazer regex para o formato de telefone;
-*/
-inputFirstNameEl.addEventListener('focus', () => {
-
-})
 
 // Validating form;
 formEl.addEventListener('submit', (e) => {
@@ -32,10 +26,10 @@ formEl.addEventListener('submit', (e) => {
     return;
   }
 
-  if(!emailInputEl.value) {
+  if(!inputEmailEl.value) {
     alert('Please, enter your best email');
     return;    
-  } else if (!isEmailValid(emailInputEl.value)) {
+  } else if (!isEmailValid(inputEmailEl.value)) {
     alert('Invalid email');
     return;
   }
@@ -52,6 +46,8 @@ formEl.addEventListener('submit', (e) => {
     alert('Invalid Phone Number');
     return;
   }
+
+  HTMLFormElement.prototype.submit.call(formEl);
 
 })
 
@@ -99,4 +95,12 @@ function isPhoneNumberValid(phoneNumber) {
   }
 
   return false;
+}
+
+export { 
+  inputFirstNameEl,
+  inputLastNameEl,
+  inputEmailEl,
+  inputDatetimeEl,
+  inputTelEl
 }
