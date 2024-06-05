@@ -53,15 +53,15 @@ label.label-animation-focus {
   font-size: .8em; 
 }
 
-.input-focused {
+input.input-focused {
   box-shadow: var(--input-focused__box-shadows);
 }
 
-.input-valid {
+input.input-valid {
   box-shadow: var(--input-valid__box-shadows);
 }
 
-.input-invalid {
+input.input-invalid {
   box-shadow: var(--input-invalid__box-shadows);
 }
 
