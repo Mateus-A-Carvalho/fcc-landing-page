@@ -3,14 +3,15 @@ import {
   inputLastNameEl,
   inputEmailEl,
   inputDatetimeEl,
-  inputTelEl
+  inputTelEl,
+  formEl
 } from './form-validate.js'
 
 const labelEls = document.querySelectorAll('label');
+console.log(formEl)
 
-console.log(labelEls[0].dataset)
+formEl.addEventListener('click', (e) => {
+    
 
-for(let label of labelEls) {
-  console.log(label.dataset);
-}
+})
 

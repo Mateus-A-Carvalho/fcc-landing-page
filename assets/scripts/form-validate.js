@@ -102,5 +102,6 @@ export {
   inputLastNameEl,
   inputEmailEl,
   inputDatetimeEl,
-  inputTelEl
+  inputTelEl,
+  formEl
 }
