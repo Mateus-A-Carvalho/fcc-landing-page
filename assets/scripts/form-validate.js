@@ -1,4 +1,4 @@
-import { labelAnimate } from './input-label-animation.js'
+// import { labelAnimate } from './input-label-animation.js'
 
 const formEl = document.querySelector('#form');
 const inputWrapperContainer = document.querySelector('.input-names__wrapper')
@@ -7,6 +7,9 @@ const inputWrapperContainer = document.querySelector('.input-names__wrapper')
 const inputFirstNameEl = document.querySelector('#first-name');
 const inputLastNameEl = document.querySelector('#last-name');
 
+// Labels array;
+const labelEls = document.querySelectorAll('label');
+
 // Input email element; 
 const inputEmailEl = document.querySelector('#email');
 
@@ -14,6 +17,10 @@ const inputEmailEl = document.querySelector('#email');
 const inputDatetimeEl = document.querySelector('#input-datetime');
 const inputTelEl = document.querySelector('#input-tel');
 
+inputValid(inputFirstNameEl);
+inputValid(inputLastNameEl);
+inputValid(inputEmailEl);
+inputValid(inputTelEl);
 
 // Validating form;
 formEl.addEventListener('submit', (e) => {
@@ -56,6 +63,7 @@ formEl.addEventListener('submit', (e) => {
 
 })
 
+// Checking if email is valid with regex;
 function isEmailValid(email) {
   // Creating a RegEx to validate email;
   const emailRegEx = new RegExp(
@@ -63,6 +71,7 @@ function isEmailValid(email) {
   );
 
   if(emailRegEx.test(email)) {
+
     return true;
   }
 
@@ -102,10 +111,52 @@ function isPhoneNumberValid(phoneNumber) {
   return false;
 }
 
+
+
+// Function to trigger animation and check input validation;
 function inputValid(input) {
-  input.classList.toggle('input-valid');
+
+  // Function to trigger animation and check input validation
+  input.addEventListener('focus', () => {
+    labelEls.forEach(label => {
+      if (input.dataset.name === label.dataset.name) {
+        label.classList.add('label-animation-focus');
+      }
+    });
+  });
+
+  input.addEventListener('blur', () => {
+    labelEls.forEach(label => {
+      if (input.dataset.name === label.dataset.name) {
+        label.classList.remove('label-animation-focus');
+      }
+    });
+  });
 }
 
+
+  // document.addEventListener('click', (e) => { 
+  //   let element = e.target;
+    
+  //   if(element === document.activeElement){
+  //     labelEls.forEach(label => {
+  //       if(element.dataset.name === label.dataset.name) {
+  //         label.classList.add('label-animation-focus');
+  //       }
+  //     })
+  //   }
+  //   else if(element !== document.activeElement){
+  //     labelEls.forEach(label => {
+  //       if(element.dataset.name === label.dataset.name) {
+  //         label.classList.remove('label-animation-focus');
+  //       }
+  //     })
+  //   }
+
+  // })
+
+
+// Cheking the input invalid;
 function isInputInvalid(input) {
   input.classList.toggle('shake-horizontal');
   input.classList.toggle('input-invalid');
@@ -116,6 +167,7 @@ function isInputInvalid(input) {
   }, 3000)
 }
 
+// Creating a span element to warn the input invalid;
 function creatingSpan(input) {
   const spanEl = document.createElement('span');
   inputWrapperContainer.appendChild(spanEl);
@@ -126,6 +178,16 @@ function creatingSpan(input) {
   }, 3000)
 }
 
+function labelAnimate(label) {
+  label.classList.add('label-animation-focus');
+}
+
+// function isInputValid(input) {
+//   if(input.classList.contains('first-name')) {
+//     console.log('run')
+//   }
+// }
+
 export { 
   inputFirstNameEl,
   inputLastNameEl,
@@ -134,3 +196,5 @@ export {
   inputTelEl,
   formEl
 }
+
+
