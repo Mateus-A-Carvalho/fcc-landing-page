@@ -157,12 +157,12 @@
           <!-- INPUTS NAME -->
           <div class="input-wrapper">
 
-            <div class="input-names__wrapper">
+            <div class="input-names__wrapper container-input" data-name="first-name">
               <input type="text" id="first-name" class="input-name first-name" data-name="first-name" autocomplete="false">
               <label for="first-name" class="input-label__name first-name__label" data-name="first-name">First Name</label>
             </div>
 
-            <div class="input-names__wrapper">
+            <div class="input-names__wrapper container-input" data-name="last-name">
               <input type="text" id="last-name" class="input-name last-name" data-name="last-name" autocomplete="false">
               <label for="last-name" class="input-label__name last-name__label" data-name="last-name">Last Name</label>
             </div>
@@ -170,7 +170,7 @@
           </div>
 
           <!-- INPUT EMAIL -->
-          <div class="input-wrapper">
+          <div class="input-wrapper container-input" data-name="email">
             <input type="email" name="email" class="input-email" id="email" data-name="email" autocomplete="false" placeholder=" ">
             <label for="input-email" class="label-email" data-name="email">Your Best Email</label>
           </div>
@@ -178,12 +178,12 @@
           <!-- INPUT DATE AND TEL -->
           <div class="input-wrapper">
 
-            <div class="input-datetime__wrapper">
+            <div class="input-datetime__wrapper container-input" data-name="datetime">
               <label for="input-datetime" class="label-datetime">Meet Us</label>
-              <input type="datetime-local" name="" id="input-datetime" class="input-datetime">
+              <input type="datetime-local" name="" data-name="datetime" id="input-datetime" class="input-datetime">
             </div>
 
-            <div class="input-tel__wrapper">
+            <div class="input-tel__wrapper container-input" data-name="phone-number">
               <input type="tel" name="" id="input-tel" class="input-tel" data-name="phone-number" autocomplete="false">
               <label for="input-tel" class="label-input__tel" data-name="phone-number">Phone Number</label>
             </div>
@@ -203,7 +203,7 @@
 
   </main>  
   
-  <script type="module" src="./assets/scripts/form-validate.js"></script>
+  <script src="./assets/scripts/form-validate.js"></script>
   <script src="./assets/scripts/img-sliders.js"></script>
   <script src="./assets/scripts/scroll-reveal.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>

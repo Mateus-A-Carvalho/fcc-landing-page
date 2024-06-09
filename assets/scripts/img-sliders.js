@@ -68,8 +68,7 @@ function updateImg(containerNumber, btnType) {
       }
 
       firstImgSlider.style.transform = `translateX(-${(firstCurrentImg - 1) * imgWidthValue}px)`;
-      
-      // console.log(firstCurrentImg);
+     
     }
 
     if(containerNumber === 'second' && btnType.classList.contains('btn-next')) {
@@ -84,7 +83,6 @@ function updateImg(containerNumber, btnType) {
 
       secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * imgWidthValue}px)`;
       
-      // console.log(firstCurrentImg);
     }
 
     if(containerNumber === 'second' && btnType.classList.contains('btn-prev')) {
@@ -99,9 +97,6 @@ function updateImg(containerNumber, btnType) {
 
       secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * imgWidthValue}px)`;
       
-      // console.log(firstCurrentImg);
     }
 
-
-    
 }
