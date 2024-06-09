@@ -629,8 +629,8 @@ a.nav-link:active {
   }
 }
 
-@media screen and (max-width: 480px) {
-  body {
+@media screen and (max-width: 425px) {
+  body.body {
     font-size: var(--body-mobile-font-size);
   }
 
@@ -638,12 +638,14 @@ a.nav-link:active {
     display: none;
   } 
 
-  main {
-    width: 100vw;
+  main#main {
+    width: 100%;
   }
 
   section {
     width: 100%;
+    margin: 0 auto;
+    height: 100vh;
   }
 
 }
