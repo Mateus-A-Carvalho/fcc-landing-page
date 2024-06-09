@@ -17,10 +17,10 @@ const inputEmailEl = document.querySelector('#email');
 const inputDatetimeEl = document.querySelector('#input-datetime');
 const inputTelEl = document.querySelector('#input-tel');
 
-inputValid(inputFirstNameEl);
-inputValid(inputLastNameEl);
-inputValid(inputEmailEl);
-inputValid(inputTelEl);
+labelAnimate(inputFirstNameEl);
+labelAnimate(inputLastNameEl);
+labelAnimate(inputEmailEl);
+labelAnimate(inputTelEl);
 
 // Validating form;
 formEl.addEventListener('submit', (e) => {
@@ -30,6 +30,8 @@ formEl.addEventListener('submit', (e) => {
     isInputInvalid(inputFirstNameEl);
     isFirstNameValid(inputFirstNameEl.value);
     return;
+  } else {
+    addInputValidateStyle(inputFirstNameEl);
   }
   
   if(!inputLastNameEl.value) {
@@ -83,6 +85,8 @@ function isFirstNameValid(firstName) {
     creatingSpan('first name');
     return true;
   }
+
+  return false;
 }
 
 function isLastNameValid(lastName) {
@@ -113,11 +117,37 @@ function isPhoneNumberValid(phoneNumber) {
 
 
 
+function addInputValidateStyle(input) {
+  if(input.classList.contains('first-name') && !isFirstNameValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('last-name') && !isLastNameValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('input-email') && !isEmailValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('label-datetime') && !isDatetimeValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('input-tel') && !isPhoneNumberValid(input)) {
+    isInputValid(input);
+  }
+
+}
+
+
 // Function to trigger animation and check input validation;
-function inputValid(input) {
+function labelAnimate(input) {
 
   // Function to trigger animation and check input validation
-  input.addEventListener('focus', () => {
+  input.addEventListener('focus', (e) => {
+    let element = e.target;
+
     labelEls.forEach(label => {
       if (input.dataset.name === label.dataset.name) {
         label.classList.add('label-animation-focus');
@@ -125,39 +155,26 @@ function inputValid(input) {
     });
   });
 
-  input.addEventListener('blur', () => {
+  input.addEventListener('blur', (e) => {
+    let element = e.target;
+
     labelEls.forEach(label => {
-      if (input.dataset.name === label.dataset.name) {
+      if (input.dataset.name === label.dataset.name && !element.value) {
         label.classList.remove('label-animation-focus');
       }
     });
   });
+
 }
-
-
-  // document.addEventListener('click', (e) => { 
-  //   let element = e.target;
-    
-  //   if(element === document.activeElement){
-  //     labelEls.forEach(label => {
-  //       if(element.dataset.name === label.dataset.name) {
-  //         label.classList.add('label-animation-focus');
-  //       }
-  //     })
-  //   }
-  //   else if(element !== document.activeElement){
-  //     labelEls.forEach(label => {
-  //       if(element.dataset.name === label.dataset.name) {
-  //         label.classList.remove('label-animation-focus');
-  //       }
-  //     })
-  //   }
-
-  // })
 
 
 // Cheking the input invalid;
 function isInputInvalid(input) {
+  labelEls.forEach(label => {
+    if(input.dataset.name === label.dataset.name) {
+      label.classList.add('shake-horizontal');
+    }
+  })
   input.classList.toggle('shake-horizontal');
   input.classList.toggle('input-invalid');
 
@@ -165,6 +182,11 @@ function isInputInvalid(input) {
     input.classList.toggle('shake-horizontal');
     input.classList.toggle('input-invalid');
   }, 3000)
+}
+
+// Adding box-shadow in input valid;
+function isInputValid(input) {
+  input.classList.add('input-valid')
 }
 
 // Creating a span element to warn the input invalid;
@@ -178,23 +200,5 @@ function creatingSpan(input) {
   }, 3000)
 }
 
-function labelAnimate(label) {
-  label.classList.add('label-animation-focus');
-}
 
-// function isInputValid(input) {
-//   if(input.classList.contains('first-name')) {
-//     console.log('run')
-//   }
-// }
-
-export { 
-  inputFirstNameEl,
-  inputLastNameEl,
-  inputEmailEl,
-  inputDatetimeEl,
-  inputTelEl,
-  formEl
-}
-
-
+// TODO: Continue to work on color validation input. For now, I'm working in firstName input;
