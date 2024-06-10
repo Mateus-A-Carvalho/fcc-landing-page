@@ -629,9 +629,10 @@ a.nav-link:active {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media (max-width: 425px) {
   body.body {
     font-size: var(--body-mobile-font-size);
+    min-width: 425px
   }
 
   header {
