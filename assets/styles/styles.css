@@ -737,8 +737,8 @@ a.nav-link:active {
 
   .btn {
     font-size: 2rem;
-    height: 5rem;
-    padding: 1.5rem 1rem;
+    height: 7rem;
+    padding: 2.5rem 1rem;
   }
 
   .products-text__container-wrapper {
@@ -746,6 +746,6 @@ a.nav-link:active {
     padding: 0 2rem;
     background-color: #cda5f3;
     text-shadow: var(--text-shadow);
-    font-size: .6em;
+    font-size: 1.4rem;
   }
 }
