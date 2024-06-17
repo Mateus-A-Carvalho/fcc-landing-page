@@ -746,7 +746,7 @@ a.nav-link:active {
     padding: 3rem 2rem;
     background-color: #cda5f3;
     text-shadow: var(--text-shadow);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   section.form__section {
