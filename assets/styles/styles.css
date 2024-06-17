@@ -427,7 +427,7 @@ h2.form__heading {
 
 .input-names__wrapper,
 .input-datetime__wrapper,
-.input-tel__wrapper{
+.input-tel__wrapper {
   width: 50%;
   height: 2.5rem;
 }
@@ -743,7 +743,7 @@ a.nav-link:active {
 
   .products-text__container-wrapper {
     width: 100%;
-    padding: 0 2rem;
+    padding: 3rem 2rem;
     background-color: #cda5f3;
     text-shadow: var(--text-shadow);
     font-size: 1.4rem;
@@ -756,7 +756,7 @@ a.nav-link:active {
   }
 
   form.form {
-    height: 60rem;
+    height: 70rem;
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -764,7 +764,27 @@ a.nav-link:active {
     justify-content: space-evenly;
   }
 
+  h2.form__heading {
+    text-align: center;
+  }
+
   .img-wrapper {
     display: none;
   }
+
+  .input-wrapper:nth-of-type(1),
+  .input-wrapper:nth-of-type(3) {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .input-names__wrapper,
+  .input-datetime__wrapper,
+  .input-tel__wrapper {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
 }
