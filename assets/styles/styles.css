@@ -761,7 +761,7 @@ a.nav-link:active {
     margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;  
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   h2.form__heading {
@@ -785,6 +785,11 @@ a.nav-link:active {
   .input-tel__wrapper {
     width: 100%;
     margin-top: 2rem;
+  }
+
+  .btn-submit {
+    width: 80%;
+    font-size: 1.3em;
   }
 
 }
