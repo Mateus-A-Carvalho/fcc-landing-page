@@ -28,6 +28,7 @@
   --btn-prev-border: 0 1.5rem 1.5rem 0;
   --btn-next-border: 1.5rem 0 0 1.5rem;
   --text-shadow: 3px -2px 7px rgba(0, 0, 0, .3);
+  --mobile-menu-bgc: rgb(14, 15, 35, .9);
 
   /* TRANSITIONS AND ANIMATIONS VARIABLES */
   --transition-timing: 250ms ease-in-out;
@@ -140,11 +141,20 @@ div h1.logo__heading {
   border-radius: 50%;
 }
 
+.menu-wrap {
+  width: 30%;
+  height: auto;
+}
+
+.toggler {
+  display: none;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 30%;
+  width: 100%;
   height: auto;
 }
 
@@ -636,10 +646,6 @@ a.nav-link:active {
     min-width: 100vw
   }
 
-  header {
-    display: none;
-  } 
-
   main#main.main {
     min-width: 100%;
   }
@@ -650,7 +656,7 @@ a.nav-link:active {
   }
   
   h1.heading-presentation {
-    top: 90px;
+    top: 150px;
     left: 50%;
     width: 100%;
     margin: 0 auto;
@@ -664,7 +670,7 @@ a.nav-link:active {
     width: 80%;
     height: auto;
     position: absolute;
-    top: 250px;
+    top: 300px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: var(--border-radius);
@@ -792,4 +798,30 @@ a.nav-link:active {
     font-size: 1.3em;
   }
 
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6rem;
+    height: 6rem;
+    padding: 1rem;
+  } 
+
+  header .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  .logo-wrapper {
+    display: none;
+  }
+
+  .nav-link {
+    visibility: hidden;
+  }
 }
