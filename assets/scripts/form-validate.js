@@ -2,6 +2,12 @@
 const formEl = document.querySelector('#form');
 const containerInputsEl = document.querySelectorAll('.container-input')
 
+const inputToggler = document.querySelector('#toggler')
+
+document.addEventListener('click', () => {
+  console.log(inputToggler.checked);
+})
+
 // First and Last name inputs elements;
 const inputFirstNameEl = document.querySelector('#first-name');
 const inputLastNameEl = document.querySelector('#last-name');
@@ -235,3 +241,4 @@ function creatingSpan(message, inputType) {
     spanEl.remove();
   }, 2000)
 }
+
