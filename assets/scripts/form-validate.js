@@ -2,7 +2,7 @@
 const formEl = document.querySelector('#form');
 const containerInputsEl = document.querySelectorAll('.container-input')
 
-const inputToggler = document.querySelector('#toggler')
+const inputToggler = document.querySelector('.toggler')
 
 document.addEventListener('click', () => {
   console.log(inputToggler.checked);
