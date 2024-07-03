@@ -226,6 +226,8 @@ function creatingSpan(message, inputType) {
       if(container.dataset.name === 'datetime') {
         spanEl.style.top = '5px';
       }
+
+      spanEl.remove();
       container.appendChild(spanEl);
       spanEl.innerHTML = `${message}`
     }
