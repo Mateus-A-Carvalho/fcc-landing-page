@@ -913,7 +913,7 @@ a.nav-link:active {
   .menu-wrap .menu .list__item {
     list-style: none;
     color: #fff;
-    font-size: 3.5em;
+    font-size: 2em;
     padding: 5rem 0;
     text-transform: uppercase;
   }
