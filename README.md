@@ -13,7 +13,8 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
-      - [Grid Layouts](#grid-layouts)
+      - [**Grid Layouts**](#grid-layouts)
+      - [Form Validation](#form-validation)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -72,7 +73,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 This section show some new knowledges that I learned in this project. 
 
-#### Grid Layouts
+#### **Grid Layouts**
+
+In this project I starded to work with Grid Layout. This is a skill that I have to improve and some
 
 ```css
 /* PRODUCTS SECTION */
@@ -110,6 +113,12 @@ section#products {
 }
 ```
 ---
+
+#### Form Validation
+
+``` javascript
+
+``` 
 
 
 ### Continued development
