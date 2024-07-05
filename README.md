@@ -14,7 +14,7 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
       - [**Grid Layouts**](#grid-layouts)
-      - [Form Validation](#form-validation)
+      - [Image Sliders](#image-sliders)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -75,7 +75,11 @@ This section show some new knowledges that I learned in this project.
 
 #### **Grid Layouts**
 
-In this project I starded to work with Grid Layout. This is a skill that I have to improve and some
+In this project I starded to work with Grid Layout. This is a skill that I have to improve. Here is the code that I implemented to style the images and text of products. In Desktop View you can see them side by side. 
+
+In Mobile View, I decided to show one unde other. 
+
+**Desktop View**
 
 ```css
 /* PRODUCTS SECTION */
@@ -112,11 +116,75 @@ section#products {
   grid-row: 2 / -1;
 }
 ```
+**Mobile View**
+
+```css
+section#products {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-template-rows: repeat(4, 1fr);
+  height: auto;
+  padding: 8.5rem 2.5rem;
+  gap: .5rem;
+  font-family: var(--body-font);
+}
+```css
+ .products-img__container-wrapper:nth-of-type(1) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .products-text__container-wrapper:nth-of-type(1) {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
+  .products-img__container-wrapper:nth-of-type(2) {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+
+  .products-text__container-wrapper:nth-of-type(2) {
+    grid-column: 1 / -1;
+    grid-row: 4 / -1;
+  }
+```
+
 ---
 
-#### Form Validation
+#### Image Sliders
+
+**Controls**
+
+This part of code I implemented what I learned in a Youtube tutorial's. In the code bellow, the variables <code>firstCurrentImg</code> and <code>secondCurrentImg</code> are controls that check the lenght of <code>firstContainerProductsImgEl</code> and <code>secondContainerProductsImgEl</code>. The Event Handle will check if the target of event type contains the class that refers to images and pass this target as a parameter in the <code>updateImg()</code>.
 
 ``` javascript
+// Img control;
+let firstCurrentImg = 1;
+let secondCurrentImg = 1;
+
+bodyEl.addEventListener('click', (e) => {
+  if(e.target.classList.contains('first-container__btn-next')) {
+    updateImg('first', e.target);
+  }
+
+  if(e.target.classList.contains('first-container__btn-prev')) {
+    updateImg('first', e.target);
+  }
+
+  if(e.target.classList.contains('second-container__btn-next')) {
+    updateImg('second', e.target);
+  }
+
+  if(e.target.classList.contains('second-container__btn-prev')) {
+    updateImg('second', e.target);
+  }
+})
+
+```
+
+
+```javascript
 
 ``` 
 
