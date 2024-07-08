@@ -15,6 +15,7 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
     - [What I learned](#what-i-learned)
       - [**Grid Layouts**](#grid-layouts)
       - [Image Sliders](#image-sliders)
+    - [Form Validation](#form-validation)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -182,12 +183,89 @@ bodyEl.addEventListener('click', (e) => {
 })
 
 ```
+**UpdateImg() function**
 
+In this code bellow, the <code>updateImg()</code> takes *two parameters*, the *first* tells us which container the we clicking. The *second* parameter passes button type to check the class name. After <code>if/else</code> statement checks the firsts parameters and knows if is first or second, we icrement the **image control's**. After it, we checks two things: <br>
 
+1. If image control(<code>firstCurrentImg</code> or <code>secondCurrentImg</code>) is greater than its own lenght, them will be equal 1. 
+2. If image control is less than 1, them will be equal its own lenght.
+  
+This is the two basic verification before we set slide animation.
 ```javascript
+function updateImg(containerNumber, btnType) {
+    
+    // Checking the parameter
+    if(containerNumber === 'first' && btnType.classList.contains('btn-next')) {
+      firstCurrentImg++;   
+      
+      // Img control
+      if(firstCurrentImg > firstContainerProductsImgEl.length) {
+        firstCurrentImg = 1;
+      } else if(firstCurrentImg < 1) {
+        firstCurrentImg = firstContainerProductsImgEl.length;
+      }
 
+      firstImgSlider.style.transform = `translateX(-${(firstCurrentImg - 1) * imgWidthValue}px)`;
+      
+    }
+
+    if(containerNumber === 'first' && btnType.classList.contains('btn-prev')) {
+      firstCurrentImg--;   
+      
+      // Img control
+      if(firstCurrentImg > firstContainerProductsImgEl.length) {
+        firstCurrentImg = 1;
+      } else if(firstCurrentImg < 1) {
+        firstCurrentImg = firstContainerProductsImgEl.length;
+      }
+
+      firstImgSlider.style.transform = `translateX(-${(firstCurrentImg - 1) * imgWidthValue}px)`;
+     
+    }
+
+    if(containerNumber === 'second' && btnType.classList.contains('btn-next')) {
+      secondCurrentImg++;   
+      
+      // Img control
+      if(secondCurrentImg > secondContainerProductsImgEl.length) {
+        secondCurrentImg = 1;
+      } else if(secondCurrentImg < 1) {
+        secondCurrentImg = secondContainerProductsImgEl.length;
+      }
+
+      secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * imgWidthValue}px)`;
+      
+    }
+
+    if(containerNumber === 'second' && btnType.classList.contains('btn-prev')) {
+      secondCurrentImg--;   
+      
+      // Img control
+      if(secondCurrentImg > secondContainerProductsImgEl.length) {
+        secondCurrentImg = 1;
+      } else if(secondCurrentImg < 1) {
+        secondCurrentImg = secondContainerProductsImgEl.length;
+      }
+
+      secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * imgWidthValue}px)`;
+      
+    }
+}
 ``` 
 
+**Slider Animation**
+
+This code reveal one of thousands of ways to do this animation. In my solution, all images is wrapped in a container. This container will slide to the left or to the right according to **image control** multiplying to <code>imgWidthValule</code>. To avoid any error sliding the images, we subtract by 1 the image control.
+```javascript
+  secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * imgWidthValue}px)`;
+```
+
+---
+
+### Form Validation
+This was the hardest part of my project. I needed to learn a bit of ***RegEx*** to check the inputs. Also, firstly I wanted to made modules and specific files to each function(Validade, Label Animation and etc...). But I realized that my code was very confused and with a lot of bug. So I decided to made the *validate* and other *functionalities* about form in the same file.
+
+---
 
 ### Continued development
 
