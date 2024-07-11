@@ -476,6 +476,10 @@ span {
   transition: 300ms ease-in-out;
 }
 
+.label-email {
+  pointer-events: none;
+}
+
 .input-label__name,
 .label-email,
 .label-input__tel {
@@ -575,7 +579,7 @@ a.nav-link:active {
 
 
 /* KEYFRAMES */
-  @keyframes text-focus-in {
+@keyframes text-focus-in {
     0% {
       -webkit-filter: blur(15px);
               filter: blur(15px);
@@ -589,7 +593,7 @@ a.nav-link:active {
     }
     
  
-  }
+}
 
 @-webkit-keyframes shake-horizontal {
   0%,

@@ -265,6 +265,25 @@ This code reveal one of thousands of ways to do this animation. In my solution, 
 ### Form Validation
 This was the hardest part of my project. I needed to learn a bit of ***RegEx*** to check the inputs. Also, firstly I wanted to made modules and specific files to each function(Validade, Label Animation and etc...). But I realized that my code was very confused and with a lot of bug. So I decided to made the *validate* and other *functionalities* about form in the same file.
 
+**Valitating**
+
+First of all, we started with a event trigger "submit". Then, we catch this event with <code>e</code> parameter and prevent the form to send data without a validation, in <code>e.preventDefault();</code>. 
+ 
+After it, start a serie of <code>if/else</code> statements that will check each input to validate this form. I choose to put one of this validate to don't make it too big.
+
+Accordingly to the requires, it should have a <code>input</code> with a <code>id="submit"</code>. This creates a error when we pass for all input validation's and call the <code>formEl.submit()</code> method's because this is overlaiding for other element with *submit* name. To solve this problem, I used the <code>.call()</code> function to call submit method's to form using heritage of <code>HTMLFormElement</code>.
+
+```javascript
+// Validating form;
+formEl.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  
+  HTMLFormElement.prototype.submit.call(formEl); // Inheriting the submit method from HTMLFormElement and calling formEl as thisArg;
+
+})
+```
+
 ---
 
 ### Continued development
