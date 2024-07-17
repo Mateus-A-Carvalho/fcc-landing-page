@@ -14,8 +14,9 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
       - [**Grid Layouts**](#grid-layouts)
-      - [Image Sliders](#image-sliders)
+      - [**Image Sliders**](#image-sliders)
     - [Form Validation](#form-validation)
+    - [Box-shadow style function](#box-shadow-style-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -68,7 +69,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [Scroll Reveal](https://scrollrevealjs.org/) - JS library
+- [Scroll Reveal](https://scrollrevealjs.org/) - JS Library
+- [Animista](https://animista.net/) - CSS Library
 
 ### What I learned
 
@@ -129,31 +131,31 @@ section#products {
   gap: .5rem;
   font-family: var(--body-font);
 }
-```css
- .products-img__container-wrapper:nth-of-type(1) {
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
-  }
 
-  .products-text__container-wrapper:nth-of-type(1) {
-    grid-column: 1 / -1;
-    grid-row: 2 / 3;
-  }
+.products-img__container-wrapper:nth-of-type(1) {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
 
-  .products-img__container-wrapper:nth-of-type(2) {
-    grid-column: 1 / -1;
-    grid-row: 3 / 4;
-  }
+.products-text__container-wrapper:nth-of-type(1) {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
 
-  .products-text__container-wrapper:nth-of-type(2) {
-    grid-column: 1 / -1;
-    grid-row: 4 / -1;
-  }
+.products-img__container-wrapper:nth-of-type(2) {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+}
+
+.products-text__container-wrapper:nth-of-type(2) {
+  grid-column: 1 / -1;
+  grid-row: 4 / -1;
+}
 ```
 
 ---
 
-#### Image Sliders
+#### **Image Sliders**
 
 **Controls**
 
@@ -183,7 +185,7 @@ bodyEl.addEventListener('click', (e) => {
 })
 
 ```
-**UpdateImg() function**
+**<code>UpdateImg()</code> function**
 
 In this code bellow, the <code>updateImg()</code> takes *two parameters*, the *first* tells us which container the we clicking. The *second* parameter passes button type to check the class name. After <code>if/else</code> statement checks the firsts parameters and knows if is first or second, we icrement the **image control's**. After it, we checks two things: <br>
 
@@ -278,12 +280,158 @@ Accordingly to the requires, it should have a <code>input</code> with a <code>id
 formEl.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  
+
   HTMLFormElement.prototype.submit.call(formEl); // Inheriting the submit method from HTMLFormElement and calling formEl as thisArg;
 
 })
 ```
 
+Here is the part that check inputs specifically. In <code>isEmailValid(email)</code> and <code>isPhoneNumberValid(phoneNumber)</code> functions I used a ***RegEx*** to accept the patterns. In phone number, I set the regex to accept only numbers of Brazil(My Country)/
+
+```javascript
+// Checking if email is valid with regex;
+function isEmailValid(email) {
+  // Creating a RegEx to validate email;
+  const emailRegEx = new RegExp(
+    /^[^\s]+@[^\s]+\.[^\s]+$/
+  );
+
+  if(emailRegEx.test(email)) {
+
+    return true;
+  }
+
+  return false;
+}
+// Checking if first name input is valid;
+function isFirstNameValid(firstName) {
+  if(!firstName) {
+    creatingSpan('Please, enter your first name', 'first-name');
+    return true; // Returning true to use this value in the form validation;
+  }
+
+  return false; // Returning false to use this value in addInputValidateStyle() feature;
+}
+
+// Checking if last name input is valid;
+function isLastNameValid(lastName) {
+  if(!lastName) {
+    creatingSpan('Please, enter your last name', 'last-name');
+    return true;
+  }
+
+  return false;
+}
+
+// Checking if datetime input is valid;
+function isDatetimeValid(datetime) {
+  if(!datetime) {
+    creatingSpan('Please, select your prefered date ', 'datetime');
+    return true;
+  } 
+
+  return false;
+}
+
+// checking if phone number input is valid
+function isPhoneNumberValid(phoneNumber) {
+  const telNumberRegex = new RegExp( // Testing a Regex based in Brazilians DDD(between 11 to 99); 
+    /^[1-9][1-9]9\d{4}\d{4}$/ // 
+  );
+
+  if(telNumberRegex.test(phoneNumber)) {
+    return true;
+  }
+
+  return false;
+}
+
+// This function adds input box-shadow feature;
+function addInputValidateStyle(input) {
+  if(input.classList.contains('first-name') && !isFirstNameValid(input)) { // Based in class name and return values, add box-shadow;
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('last-name') && !isLastNameValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('input-email') && !isEmailValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('input-datetime') && !isDatetimeValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('input-tel') && !isPhoneNumberValid(input)) {
+    isInputValid(input);
+  }
+
+}
+
+// Function to trigger animation and check input validation;
+function labelAnimate(input) {
+
+  // Function to trigger animation and check input validation
+  input.addEventListener('focus', (e) => {
+    let element = e.target;
+
+    labelEls.forEach(label => {
+      if (input.dataset.name === label.dataset.name) {
+        label.classList.add('label-animation-focus');
+      }
+    });
+  });
+
+  input.addEventListener('blur', (e) => {
+    let element = e.target;
+
+    labelEls.forEach(label => {
+      if (input.dataset.name === label.dataset.name && !element.value) {
+        label.classList.remove('label-animation-focus');
+      }
+    });
+  });
+
+}
+```
+---
+### Box-shadow style function
+
+This functions receives input as parameters and check if has a class with input name **AND** denies theses values. Bellow I will explain this.
+
+
+
+```javascript
+// This function adds input box-shadow feature;
+function addInputValidateStyle(input) {
+  if(input.classList.contains('first-name') && !isFirstNameValid(input)) { // Based in class name and return values, add box-shadow;
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('last-name') && !isLastNameValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('input-email') && !isEmailValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('input-datetime') && !isDatetimeValid(input)) {
+    isInputValid(input);
+  }
+
+  if(input.classList.contains('input-tel') && !isPhoneNumberValid(input)) {
+    isInputValid(input);
+  }
+
+}
+```
+
+1. The first condition of <code>if/else</code> statements checks if input has a specifically class name.
+2. After it, I deny the input value because if this functions is running, it's means that the verification passed the first block of <code>if/else</code> statement and got caughted in the <code>else</code> statement, returning **true**. Returning true is easier to check in this case. 
+3. If this block returns true, <code>isInputValid()</code> is invoked.
 ---
 
 ### Continued development

@@ -142,36 +142,13 @@ function isPhoneNumberValid(phoneNumber) {
   return false;
 }
 
-// This function adds input box-shadow feature;
-function addInputValidateStyle(input) {
-  if(input.classList.contains('first-name') && !isFirstNameValid(input)) { // Based in class name and return values, add box-shadow;
-    isInputValid(input);
-  }
 
-  if(input.classList.contains('last-name') && !isLastNameValid(input)) {
-    isInputValid(input);
-  }
-
-  if(input.classList.contains('input-email') && !isEmailValid(input)) {
-    isInputValid(input);
-  }
-
-  if(input.classList.contains('input-datetime') && !isDatetimeValid(input)) {
-    isInputValid(input);
-  }
-
-  if(input.classList.contains('input-tel') && !isPhoneNumberValid(input)) {
-    isInputValid(input);
-  }
-
-}
 
 // Function to trigger animation and check input validation;
 function labelAnimate(input) {
 
   // Function to trigger animation and check input validation
   input.addEventListener('focus', (e) => {
-    let element = e.target;
 
     labelEls.forEach(label => {
       if (input.dataset.name === label.dataset.name) {
