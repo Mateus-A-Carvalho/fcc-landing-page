@@ -462,11 +462,6 @@ span {
   text-align: left;
 }
 
-/* Input settings */
-.input-name,
-.input-datetime,
-.input-tel,
-
 /* Label Settings */
 .input-label__name,
 .label-datetime, 
@@ -474,10 +469,6 @@ span {
 .label-input__tel {
   display: block;
   transition: 300ms ease-in-out;
-}
-
-.label-email {
-  pointer-events: none;
 }
 
 .input-label__name,
@@ -489,6 +480,7 @@ span {
   top: -25px;
   left: 5px;
   font-style: italic;
+  pointer-events: none;
 }
 
 /* input settings */
