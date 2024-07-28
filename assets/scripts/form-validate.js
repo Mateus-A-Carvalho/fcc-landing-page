@@ -202,6 +202,7 @@ function isInputInvalid(input) {
       }, 2000)
     }
   })
+  
   input.classList.toggle('shake-horizontal');
   input.classList.toggle('input-invalid');
 
