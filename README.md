@@ -43,8 +43,8 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
     - [Box-shadow style function](#box-shadow-style-function-1)
     - [Label Animations](#label-animations-1)
     - [isInputValid() and isInputInvalid() Function](#isinputvalid-and-isinputinvalid-function)
+    - [Creating Span](#creating-span)
     - [Continued development](#continued-development-1)
-    - [Useful resources](#useful-resources-1)
   - [Author](#author-1)
   - [Acknowledgments](#acknowledgments-1)
 
@@ -1094,8 +1094,8 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
     - [Box-shadow style function](#box-shadow-style-function-1)
     - [Label Animations](#label-animations-1)
     - [isInputValid() and isInputInvalid() Function](#isinputvalid-and-isinputinvalid-function)
+    - [Creating Span](#creating-span)
     - [Continued development](#continued-development-1)
-    - [Useful resources](#useful-resources-1)
   - [Author](#author-1)
   - [Acknowledgments](#acknowledgments-1)
 
@@ -2004,25 +2004,15 @@ In ***HTML*** and ***CSS*** there is some settings to follow.
 ```css
 
 .input-label__name,
-
 .label-email,
-
 .label-input__tel {
-
-width:  max-content;
-
-position:  relative;
-
-text-align:  left;
-
-top:  -25px;
-
-left:  5px;
-
-font-style:  italic;
-
-pointer-events:  none;
-
+  width:  max-content;
+  position:  relative;
+  text-align:  left;
+  top:  -25px;
+  left:  5px;
+  font-style:  italic;
+  pointer-events:  none;
 }
 
 ```
@@ -2054,60 +2044,77 @@ To ensure that this animation will works I invoked this function in at the beggi
 
 The <code>isInputValid()</code> function is very easy to explain. Every time that this function is invoked, I add a class called <code>input-valid</code>. 
 
-```css
+```javascript
+
 // Cheking the input invalid;
+function isInputInvalid(input) {
+  labelEls.forEach(label => {
+    if(input.dataset.name === label.dataset.name) {
+      label.classList.add('shake-horizontal');
 
-function  isInputInvalid(input) {
-
-labelEls.forEach(label  => {
-
-if(input.dataset.name  ===  label.dataset.name) {
-
-label.classList.add('shake-horizontal');
-
+      setTimeout(() => {
+        label.classList.remove('shake-horizontal');
+      }, 2000)
+    }
+  })
   
+  input.classList.toggle('shake-horizontal');
+  input.classList.toggle('input-invalid');
 
-setTimeout(() => {
-
-label.classList.remove('shake-horizontal');
-
-}, 2000)
-
-}
-
-})
-
-input.classList.toggle('shake-horizontal');
-
-input.classList.toggle('input-invalid');
-
-  
-
-setTimeout(() => {
-
-input.classList.toggle('shake-horizontal');
-
-input.classList.toggle('input-invalid');
-
-}, 2000)
-
+  setTimeout(() => {
+    input.classList.toggle('shake-horizontal');
+    input.classList.toggle('input-invalid');
+  }, 2000)
 }
 
   
 
 // Adding box-shadow in input valid;
-
 function  isInputValid(input) {
-
-input.classList.add('input-valid')
-
+  input.classList.add('input-valid')
 }
 ```
 
 The `isInputInvalid()` function works a little different. I used a `forEach() `method to verify if input and label are the same, using `data-set*` to link them. Testing `true`, it will add in label a class `shake-horizontal`. Then, I set a `setTimeout()`method to delete this class added. 
 
+The ``isInputValid()`` just add a class ``input-valid`` with box-shadow when it is verified 
 
-  
+---
+
+### Creating Span
+
+The last function that I implemented in this project is ``createSpan()``
+
+```javascript
+// Creating a span element to warn the input invalid;
+function creatingSpan(message, inputType) {
+  const spanEl = document.createElement('span');
+
+  containerInputsEl.forEach(container => {
+    if(inputType === container.dataset.name) {
+      if(container.dataset.name === 'datetime') {
+        spanEl.style.top = '5px';
+      }
+
+      spanEl.remove();
+      container.appendChild(spanEl);
+      spanEl.innerHTML = `${message}`
+    }
+  })
+
+  setTimeout(() => {
+    spanEl.remove();
+  }, 2000)
+}
+```
+
+This function has *two* parameters: ***message*** and ***inputType***. First of all, this functions creates a ``span`` element. In this part I used a ``forEach()`` method to iterate every ``containerInputEl`` and check ``dataset.name`` to set the correctly height of label in datetime input. In others inputs, it wasn't necessary. 
+
+After it, I delete any span that. I made this because every time that this function is involked, it creates a new ``span``. If I click consecutive times in submit button, it will create a lot of ``span`` elements. 
+
+In the next line, this function add the ``span`` element in container. Then, the third line of this part of code, ``span`` element receives the *message* in parameters.
+
+Outside this code, I implemented a ``setTimeout()`` to remove ``span`` every 2000ms(*seconds*).
 
 ---
 
@@ -2117,23 +2124,10 @@ The `isInputInvalid()` function works a little different. I used a `forEach() `m
 
   
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+This project was very interesting to me. I did more than what was required. One of functionalities that I want to implement in future is integrate the form with some API that receive the data of form and send an email to user. Also, in this project used ***Lighthouse*** of ***Dev Tools*** and I will use it in every project. Finally, I'm going to start use ***Mobile First*** concept.
 
-  
 
-### Useful resources
-
-  
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-  
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-  
+---
 
 ## Author
 
@@ -2141,15 +2135,14 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - Website - [Add your name here](https://www.your-site.com)
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@Mateus-A-Carvalho](https://www.frontendmentor.io/profile/Mateus-A-Carvalho)
 
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Twitter - [@O_DevCarvalho](https://x.com/O_DevCarvalho)
 
-  
+- Linkedin - [Mateus A. Carvalho](https://www.linkedin.com/in/mateus-a-carvalho/)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Instagram - [@OMateusCarvalhoDev](https://www.instagram.com/o.mateus.carvalho.dev/)
 
-  
 
 ## Acknowledgments
 
@@ -2157,6 +2150,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
-  
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
