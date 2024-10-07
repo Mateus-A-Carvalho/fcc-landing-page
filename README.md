@@ -176,23 +176,14 @@ In Mobile View, I decided to show one unde other.
 ```css
 
 /* PRODUCTS SECTION */
-
 section#products {
-
-display:  grid; /* Defining Grid Layout */
-
-grid-template-columns:  repeat(2, 50%);
-
-grid-template-rows:  repeat(2, 1fr);
-
-height:  auto;
-
-padding:  8.5rem  5rem;
-
-gap:  1rem  2.5rem;
-
-font-family:  var(--body-font);
-
+  display:  grid; /* Defining Grid Layout */
+  grid-template-columns:  repeat(2, 50%);
+  grid-template-rows:  repeat(2, 1fr);
+  height:  auto;
+  padding:  8.5rem  5rem;
+  gap:  1rem  2.5rem;
+  font-family:  var(--body-font);
 }
 
 ```
@@ -202,43 +193,31 @@ font-family:  var(--body-font);
 /* Products sliders */
 
 .products-img__container-wrapper:nth-of-type(1) {
-
-grid-row:  1 / 2;
-
-border-radius:  var(--inverted-border-radius);
-
+  grid-row:  1 / 2;
+  border-radius:  var(--inverted-border-radius);
 }
 
   
 
 .products-img__container-wrapper:nth-of-type(2) {
-
-grid-row:  2 / -1;
-
-grid-column:  2/ -1;
-
-border-radius:  var(--inverted-border-radius);
-
-justify-content:  start;
-
+  grid-row:  2 / -1;
+  grid-column:  2/ -1;
+  border-radius:  var(--inverted-border-radius);
+  justify-content:  start;
+}
 ```
 
 ```css
 
 /* CONTAINER WITH SERVICES/PRODUCTS DESCRIPTORS */
-
 .products-text__container-wrapper:nth-of-type(1) {
-
-grid-row:  1 / 2;
-
+  grid-row:  1 / 2;
 }
 
   
 
 .products-text__container-wrapper:nth-of-type(2) {
-
-grid-row:  2 / -1;
-
+  grid-row:  2 / -1;
 }
 
 ```
@@ -250,41 +229,27 @@ grid-row:  2 / -1;
 ```css
 
 section#products {
-
-display:  grid;
-
-grid-template-columns:  repeat(1, 100%);
-
-grid-template-rows:  repeat(4, 1fr);
-
-height:  auto;
-
-padding:  8.5rem  2.5rem;
-
-gap:  .5rem;
-
-font-family:  var(--body-font);
-
+  display:  grid;
+  grid-template-columns:  repeat(1, 100%);
+  grid-template-rows:  repeat(4, 1fr);
+  height:  auto;
+  padding:  8.5rem  2.5rem;
+  gap:  .5rem;
+  font-family:  var(--body-font);
 }
 
   
 
 .products-img__container-wrapper:nth-of-type(1) {
-
-grid-column:  1 / -1;
-
-grid-row:  1 / 2;
-
+  grid-column:  1 / -1;
+  grid-row:  1 / 2; 
 }
 
   
 
 .products-text__container-wrapper:nth-of-type(1) {
-
-grid-column:  1 / -1;
-
-grid-row:  2 / 3;
-
+  grid-column:  1 / -1;
+  grid-row:  2 / 3;
 }
 
   
@@ -1910,25 +1875,13 @@ This function makes label moves up when the input is focused.
 ```javascript
 
 function  labelAnimate(input) {
-
-  
-
 // Function to trigger animation and check input validation
-
 input.addEventListener('focus', (e) => {
-
-  
-
-labelEls.forEach(label  => {
-
-if (input.dataset.name  ===  label.dataset.name) {
-
-label.classList.add('label-animation-focus');
-
-}
-
-});
-
+  labelEls.forEach(label  => {
+    if (input.dataset.name  ===  label.dataset.name) {
+      label.classList.add('label-animation-focus');
+    }
+  });
 });
 
   
@@ -2108,11 +2061,11 @@ function creatingSpan(message, inputType) {
 }
 ```
 
-This function has *two* parameters: ***message*** and ***inputType***. First of all, this functions creates a ``span`` element. In this part I used a ``forEach()`` method to iterate every ``containerInputEl`` and check ``dataset.name`` to set the correctly height of label in datetime input. In others inputs, it wasn't necessary. 
+This function has *two* parameters: ***message*** and ***inputType***. First of all, this function creates a ``span`` element. In this part I used a ``forEach()`` method to iterate every ``containerInputEl`` and check ``dataset.name`` to set correctly height of label in datetime input. In others inputs, it wasn't necessary. 
 
-After it, I delete any span that. I made this because every time that this function is involked, it creates a new ``span``. If I click consecutive times in submit button, it will create a lot of ``span`` elements. 
+After it, I delete any span that once was created. I made this because every time that this function is involked, it creates a new ``span``. If I click consecutive times in submit button, it will create a lot of ``span`` elements. 
 
-In the next line, this function add the ``span`` element in container. Then, the third line of this part of code, ``span`` element receives the *message* in parameters.
+In the next line, this function add the ``span`` element in container with ``container.appendChild(spanEl);``. Then, the third line of this part of code, ``span`` element receives the *message* in parameters.
 
 Outside this code, I implemented a ``setTimeout()`` to remove ``span`` every 2000ms(*seconds*).
 
@@ -2122,10 +2075,50 @@ Outside this code, I implemented a ``setTimeout()`` to remove ``span`` every 200
 
 ### Continued development
 
+  This project was very interesting to me. I did more than what was required. One of functionalities that I want to implement in future is integrate the form with some API that receive the data of form and send an email to user. Also, in this project used ***Lighthouse*** of ***Dev Tools*** and I will use it in every project. Finally, I'm going to start use ***Mobile First*** concept. Bellow I told which improvements I will do in the next projects.
+
+  - **Properly size images;**
+  - **Preconnect to required origins;**
+  - **Largest contentful Paint element;**
+  - **Eliminate render-blocking resources;**
+  - **Enable text compression;**
+  - **Minify CSS;**
+  - **Page prevented back/foward cache restoration;**
+  - **Images elementes don't have explict `width` and ``height``;**
+  - **Minify Javascript;** 
+  - **Serve images in next-gen formats;**
+  - **Serve static assets with an efficient cache policy;**
+  - **Ensure text remains visible dduring webfont load;**
+  - **Defer offscreen images;**
+  - **Recuce unused CSS;**
+  - **Avoid enormous network payloads;**
+  - **Avoidd large layout shifts;**
+  - **Avoid non-composited animations;**
+  - **Initial server response time was short;**
+  - **Avois an axcessive DOM size;**
+  - **Avoid chaining critical requests;**
+  - **Javascript execution time;**
+  - **Minimizes main-thread work;**
+  - **Minimize third-party usage;**
+  - **Avoid long main-thread tasks;**
   
+  In ***Accessibility*** there are those improvements to do:
 
-This project was very interesting to me. I did more than what was required. One of functionalities that I want to implement in future is integrate the form with some API that receive the data of form and send an email to user. Also, in this project used ***Lighthouse*** of ***Dev Tools*** and I will use it in every project. Finally, I'm going to start use ***Mobile First*** concept.
+  - **Images elements don't have ``[alt]`` attibutes;**
+  - **Form elements don't have associated labels;**
+  - **``video`` elements contain a ``track`` element with ``[kind="captions"]``;**
 
+  In ***Best Practices*** there are these improvements to do:
+
+  - **Displays images with incorrect aspect ratio;**
+  - **Ensure CSP is effective against XSS attacks;**
+
+  In ***SEO*** there are those improvements to do:
+
+  - **Document doesn't have a meta description;**
+  - **Images elements don't have ``[alt]`` attributes;**
+
+This is a long list of something to study and improve in the next projects.
 
 ---
 
@@ -2146,7 +2139,5 @@ This project was very interesting to me. I did more than what was required. One 
 
 ## Acknowledgments
 
-  
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+  In this project I learned more about ***how can I validate a form***, ***RegEx*** and starts to use some libraries as [Scroll Reveal JS](https://scrollrevealjs.org/). 
 
