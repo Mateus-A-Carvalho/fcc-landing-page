@@ -23,6 +23,7 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
       - [**Grid Layouts**](#grid-layouts)
       - [**Image Sliders**](#image-sliders)
     - [Form Validation](#form-validation)
+    - [Box-shadow feature](#box-shadow-feature)
     - [Box-shadow style function](#box-shadow-style-function)
     - [Label Animations](#label-animations)
     - [Continued development](#continued-development)
@@ -134,17 +135,11 @@ Then crop/optimize/edit your image however you like, add it to your project, and
   
 
 - Semantic HTML5 markup
-
 - CSS custom properties
-
 - Flexbox
-
 - CSS Grid
-
 - Mobile-first workflow
-
 - [Scroll Reveal](https://scrollrevealjs.org/) - JS Library
-
 - [Animista](https://animista.net/) - CSS Library
 
   
@@ -191,13 +186,10 @@ section#products {
 ```css
 
 /* Products sliders */
-
 .products-img__container-wrapper:nth-of-type(1) {
   grid-row:  1 / 2;
   border-radius:  var(--inverted-border-radius);
 }
-
-  
 
 .products-img__container-wrapper:nth-of-type(2) {
   grid-row:  2 / -1;
@@ -213,8 +205,6 @@ section#products {
 .products-text__container-wrapper:nth-of-type(1) {
   grid-row:  1 / 2;
 }
-
-  
 
 .products-text__container-wrapper:nth-of-type(2) {
   grid-row:  2 / -1;
@@ -245,31 +235,19 @@ section#products {
   grid-row:  1 / 2; 
 }
 
-  
-
 .products-text__container-wrapper:nth-of-type(1) {
   grid-column:  1 / -1;
   grid-row:  2 / 3;
 }
 
-  
-
 .products-img__container-wrapper:nth-of-type(2) {
-
-grid-column:  1 / -1;
-
-grid-row:  3 / 4;
-
+  grid-column:  1 / -1;
+  grid-row:  3 / 4;
 }
 
-  
-
 .products-text__container-wrapper:nth-of-type(2) {
-
-grid-column:  1 / -1;
-
-grid-row:  4 / -1;
-
+  grid-column:  1 / -1;
+  grid-row:  4 / -1;
 }
 
 ```
@@ -282,11 +260,7 @@ grid-row:  4 / -1;
 
 #### **Image Sliders**
 
-  
-
 **Controls**
-
-  
 
 This part of code I implemented what I learned in a Youtube tutorial's. In the code bellow, the variables <code>firstCurrentImg</code> and <code>secondCurrentImg</code> are controls that check the lenght of <code>firstContainerProductsImgEl</code> and <code>secondContainerProductsImgEl</code>. The Event Handle will check if the target of event type contains the class that refers to images and pass this target as a parameter in the <code>updateImg()</code>.
 
@@ -295,59 +269,37 @@ This part of code I implemented what I learned in a Youtube tutorial's. In the c
 ``` javascript
 
 // Img control;
-
 let  firstCurrentImg = 1;
-
 let  secondCurrentImg = 1;
 
-  
-
 bodyEl.addEventListener('click', (e) => {
-
-if(e.target.classList.contains('first-container__btn-next')) {
-
-updateImg('first', e.target);
-
-}
-
+  if(e.target.classList.contains('first-container__btn-next')) {
+    updateImg('first', e.target);
+  }
   
+  if(e.target.classList.contains('first-container__btn-prev')) {
+    updateImg('first', e.target);
+  }
 
-if(e.target.classList.contains('first-container__btn-prev')) {
+  if(e.target.classList.contains('second-container__btn-next')) {
+    updateImg('second', e.target);
+  }
 
-updateImg('first', e.target);
-
-}
-
-  
-
-if(e.target.classList.contains('second-container__btn-next')) {
-
-updateImg('second', e.target);
-
-}
-
-  
-
-if(e.target.classList.contains('second-container__btn-prev')) {
-
-updateImg('second', e.target);
-
-}
+  if(e.target.classList.contains('second-container__btn-prev')) {
+    updateImg('second', e.target);
+  }
 
 })
 
-  
+ 
 
 ```
 
-**<code>UpdateImg()</code> function**
-
-  
+**<code>UpdateImg()</code> function**  
 
 In this code bellow, the <code>updateImg()</code> takes *two parameters*, the *first* tells us which container the we clicking. The *second* parameter passes button type to check the class name. After <code>if/else</code> statement checks the firsts parameters and knows if is first or second, we icrement the **image control's**. After it, we checks two things: <br>
 
   
-
 1. If image control(<code>firstCurrentImg</code> or <code>secondCurrentImg</code>) is greater than its own lenght, them will be equal 1.
 
 2. If image control is less than 1, them will be equal its own lenght.
@@ -356,103 +308,64 @@ This is the two basic verification before we set slide animation.
 
 ```javascript
 
-function  updateImg(containerNumber, btnType) {
+function updateImg(containerNumber, btnType) {
+    
+    // Checking the parameter
+    if(containerNumber === 'first' && btnType.classList.contains('btn-next')) {
+      firstCurrentImg++;   
+      
+      // Img control
+      if(firstCurrentImg > firstContainerProductsImgEl.length) {
+        firstCurrentImg = 1;
+      } else if(firstCurrentImg < 1) {
+        firstCurrentImg = firstContainerProductsImgEl.length;
+      }
 
-// Checking the parameter
+      firstImgSlider.style.transform = `translateX(-${(firstCurrentImg - 1) * imgWidthValue}px)`;
+      
+    }
 
-if(containerNumber  ===  'first'  &&  btnType.classList.contains('btn-next')) {
+    if(containerNumber === 'first' && btnType.classList.contains('btn-prev')) {
+      firstCurrentImg--;   
+      
+      // Img control
+      if(firstCurrentImg > firstContainerProductsImgEl.length) {
+        firstCurrentImg = 1;
+      } else if(firstCurrentImg < 1) {
+        firstCurrentImg = firstContainerProductsImgEl.length;
+      }
 
-firstCurrentImg++;
+      firstImgSlider.style.transform = `translateX(-${(firstCurrentImg - 1) * imgWidthValue}px)`;
+     
+    }
 
-// Img control
+    if(containerNumber === 'second' && btnType.classList.contains('btn-next')) {
+      secondCurrentImg++;   
+      
+      // Img control
+      if(secondCurrentImg > secondContainerProductsImgEl.length) {
+        secondCurrentImg = 1;
+      } else if(secondCurrentImg < 1) {
+        secondCurrentImg = secondContainerProductsImgEl.length;
+      }
 
-if(firstCurrentImg  >  firstContainerProductsImgEl.length) {
+      secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * imgWidthValue}px)`;
+      
+    }
 
-firstCurrentImg = 1;
+    if(containerNumber === 'second' && btnType.classList.contains('btn-prev')) {
+      secondCurrentImg--;   
+      
+      // Img control
+      if(secondCurrentImg > secondContainerProductsImgEl.length) {
+        secondCurrentImg = 1;
+      } else if(secondCurrentImg < 1) {
+        secondCurrentImg = secondContainerProductsImgEl.length;
+      }
 
-} else  if(firstCurrentImg  <  1) {
-
-firstCurrentImg = firstContainerProductsImgEl.length;
-
-}
-
-  
-
-firstImgSlider.style.transform = `translateX(-${(firstCurrentImg  -  1) *  imgWidthValue}px)`;
-
-}
-
-  
-
-if(containerNumber  ===  'first'  &&  btnType.classList.contains('btn-prev')) {
-
-firstCurrentImg--;
-
-// Img control
-
-if(firstCurrentImg  >  firstContainerProductsImgEl.length) {
-
-firstCurrentImg = 1;
-
-} else  if(firstCurrentImg  <  1) {
-
-firstCurrentImg = firstContainerProductsImgEl.length;
-
-}
-
-  
-
-firstImgSlider.style.transform = `translateX(-${(firstCurrentImg  -  1) *  imgWidthValue}px)`;
-
-}
-
-  
-
-if(containerNumber  ===  'second'  &&  btnType.classList.contains('btn-next')) {
-
-secondCurrentImg++;
-
-// Img control
-
-if(secondCurrentImg  >  secondContainerProductsImgEl.length) {
-
-secondCurrentImg = 1;
-
-} else  if(secondCurrentImg  <  1) {
-
-secondCurrentImg = secondContainerProductsImgEl.length;
-
-}
-
-  
-
-secondImgSlider.style.transform = `translateX(-${(secondCurrentImg  -  1) *  imgWidthValue}px)`;
-
-}
-
-  
-
-if(containerNumber  ===  'second'  &&  btnType.classList.contains('btn-prev')) {
-
-secondCurrentImg--;
-
-// Img control
-
-if(secondCurrentImg  >  secondContainerProductsImgEl.length) {
-
-secondCurrentImg = 1;
-
-} else  if(secondCurrentImg  <  1) {
-
-secondCurrentImg = secondContainerProductsImgEl.length;
-
-}
-
-  
-
-secondImgSlider.style.transform = `translateX(-${(secondCurrentImg  -  1) *  imgWidthValue}px)`;
-
-}
+      secondImgSlider.style.transform = `translateX(-${(secondCurrentImg - 1) * imgWidthValue}px)`;
+      
+    }
 
 }
 
@@ -466,13 +379,12 @@ secondImgSlider.style.transform = `translateX(-${(secondCurrentImg  -  1) *  img
 
 This code reveal one of thousands of ways to do this animation. In my solution, all images is wrapped in a container. This container will slide to the left or to the right according to **image control** multiplying to <code>imgWidthValule</code>. To avoid any error sliding the images, we subtract by 1 the image control.
 
+
 ```javascript
 
 secondImgSlider.style.transform = `translateX(-${(secondCurrentImg  -  1) *  imgWidthValue}px)`;
 
 ```
-
-  
 
 ---
 
@@ -501,239 +413,105 @@ Accordingly to the requires, it should have a <code>input</code> with a <code>id
 ```javascript
 
 // Validating form;
-
 formEl.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-e.preventDefault();
-
-  
-  
-
-HTMLFormElement.prototype.submit.call(formEl); // Inheriting the submit method from HTMLFormElement and calling formEl as thisArg;
-
-  
+  HTMLFormElement.prototype.submit.call(formEl); // Inheriting the submit method from HTMLFormElement and calling formEl as thisArg;
 
 })
 
 ```
 
-  
 
-Here is the part that check inputs specifically. In <code>isEmailValid(email)</code> and <code>isPhoneNumberValid(phoneNumber)</code> functions I used a ***RegEx*** to accept the patterns. In phone number, I set the regex to accept only numbers of Brazil(My Country)/
+Here is the part that check inputs specifically. In <code>isEmailValid(email)</code> and <code>isPhoneNumberValid(phoneNumber)</code> functions I used a ***RegEx*** to accept the patterns. In phone number, I set the regex to accept only numbers of Brazil(My Country).
 
   
 
 ```javascript
 
 // Checking if email is valid with regex;
+function isEmailValid(email) {
+  // Creating a RegEx to validate email;
+  const emailRegEx = new RegExp(
+    /^[^\s]+@[^\s]+\.[^\s]+$/
+  );
 
-function  isEmailValid(email) {
-
-// Creating a RegEx to validate email;
-
-const  emailRegEx = new  RegExp(
-
-/^[^\s]+@[^\s]+\.[^\s]+$/
-
-);
-
-  
-
-if(emailRegEx.test(email)) {
-
-  
-
-return  true;
-
-}
-
-  
-
-return  false;
-
+  if(emailRegEx.test(email)) {
+    return true;
+  }
+  return false;
 }
 
 // Checking if first name input is valid;
+function isFirstNameValid(firstName) {
+  if(!firstName) {
+    creatingSpan('Please, enter your first name', 'first-name');
+    return true; // Returning true to use this value in the form validation;
+  }
 
-function  isFirstNameValid(firstName) {
-
-if(!firstName) {
-
-creatingSpan('Please, enter your first name', 'first-name');
-
-return  true; // Returning true to use this value in the form validation;
-
+  return false; // Returning false to use this value in addInputValidateStyle() feature;
 }
-
-  
-
-return  false; // Returning false to use this value in addInputValidateStyle() feature;
-
-}
-
-  
 
 // Checking if last name input is valid;
+function isLastNameValid(lastName) {
+  if(!lastName) {
+    creatingSpan('Please, enter your last name', 'last-name');
+    return true;
+  }
 
-function  isLastNameValid(lastName) {
-
-if(!lastName) {
-
-creatingSpan('Please, enter your last name', 'last-name');
-
-return  true;
-
+  return false;
 }
-
-  
-
-return  false;
-
-}
-
-  
 
 // Checking if datetime input is valid;
+function isDatetimeValid(datetime) {
+  if(!datetime) {
+    creatingSpan('Please, select your prefered date ', 'datetime');
+    return true;
+  } 
 
-function  isDatetimeValid(datetime) {
-
-if(!datetime) {
-
-creatingSpan('Please, select your prefered date ', 'datetime');
-
-return  true;
-
+  return false;
 }
-
-  
-
-return  false;
-
-}
-
-  
 
 // checking if phone number input is valid
+function isPhoneNumberValid(phoneNumber) {
+  const telNumberRegex = new RegExp( // Testing a Regex based in Brazilians DDD(between 11 to 99); 
+    /^[1-9][1-9]9\d{4}\d{4}$/ // 
+  );
 
-function  isPhoneNumberValid(phoneNumber) {
+  if(telNumberRegex.test(phoneNumber)) {
+    return true;
+  }
 
-const  telNumberRegex = new  RegExp( // Testing a Regex based in Brazilians DDD(between 11 to 99);
-
-/^[1-9][1-9]9\d{4}\d{4}$/  //
-
-);
-
-  
-
-if(telNumberRegex.test(phoneNumber)) {
-
-return  true;
-
+  return false;
 }
+```
 
-  
+### Box-shadow feature
 
-return  false;
+In this part of code, I implemented a simple logic that checks the inputs and give them a green or red box-shadow according to your validation. The ``addInputValidStyle`` function receives an input as parameters and checks if it contains respectivly class name and if it pass in validation. 
 
-}
-
-  
-
+```javascript
 // This function adds input box-shadow feature;
+function addInputValidateStyle(input) {
+  if(input.classList.contains('first-name') && !isFirstNameValid(input)) { // Based in class name and return values, add box-shadow;
+    isInputValid(input);
+  }
 
-function  addInputValidateStyle(input) {
+  if(input.classList.contains('last-name') && !isLastNameValid(input)) {
+    isInputValid(input);
+  }
 
-if(input.classList.contains('first-name') &&  !isFirstNameValid(input)) { // Based in class name and return values, add box-shadow;
+  if(input.classList.contains('input-email') && !isEmailValid(input)) {
+    isInputValid(input);
+  }
 
-isInputValid(input);
+  if(input.classList.contains('input-datetime') && !isDatetimeValid(input)) {
+    isInputValid(input);
+  }
 
-}
-
-  
-
-if(input.classList.contains('last-name') &&  !isLastNameValid(input)) {
-
-isInputValid(input);
-
-}
-
-  
-
-if(input.classList.contains('input-email') &&  !isEmailValid(input)) {
-
-isInputValid(input);
-
-}
-
-  
-
-if(input.classList.contains('input-datetime') &&  !isDatetimeValid(input)) {
-
-isInputValid(input);
-
-}
-
-  
-
-if(input.classList.contains('input-tel') &&  !isPhoneNumberValid(input)) {
-
-isInputValid(input);
-
-}
-
-  
-
-}
-
-  
-
-// Function to trigger animation and check input validation;
-
-function  labelAnimate(input) {
-
-  
-
-// Function to trigger animation and check input validation
-
-input.addEventListener('focus', (e) => {
-
-let  element = e.target;
-
-  
-
-labelEls.forEach(label  => {
-
-if (input.dataset.name  ===  label.dataset.name) {
-
-label.classList.add('label-animation-focus');
-
-}
-
-});
-
-});
-
-  
-
-input.addEventListener('blur', (e) => {
-
-let  element = e.target;
-
-  
-
-labelEls.forEach(label  => {
-
-if (input.dataset.name  ===  label.dataset.name  &&  !element.value) {
-
-label.classList.remove('label-animation-focus');
-
-}
-
-});
-
-});
-
-  
+  if(input.classList.contains('input-tel') && !isPhoneNumberValid(input)) {
+    isInputValid(input);
+  }
 
 }
 
@@ -1039,6 +817,7 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
       - [**Grid Layouts**](#grid-layouts)
       - [**Image Sliders**](#image-sliders)
     - [Form Validation](#form-validation)
+    - [Box-shadow feature](#box-shadow-feature)
     - [Box-shadow style function](#box-shadow-style-function)
     - [Label Animations](#label-animations)
     - [Continued development](#continued-development)
