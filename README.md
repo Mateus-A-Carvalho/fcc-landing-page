@@ -1,4 +1,4 @@
-# Freecodecamp Cerfification - Landing Page
+<div style="text-align:center"><h1> Freecodecamp Cerfification - Landing Page</h1></div>
 
   
 
@@ -10,25 +10,25 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
 
   
 
-- [Freecodecamp Cerfification - Landing Page](#freecodecamp-cerfification---landing-page)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-    - [The Project](#the-project)
-    - [Screenshot](#screenshot)
-    - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-      - [**Grid Layouts**](#grid-layouts)
-      - [**Image Sliders**](#image-sliders)
-    - [Form Validation](#form-validation)
-    - [Box-shadow style function](#box-shadow-style-function)
-    - [Label Animations](#label-animations)
-    - [isInputValid() and isInputInvalid() Function](#isinputvalid-and-isinputinvalid-function)
-    - [Creating Span](#creating-span)
-    - [Continued development](#continued-development)
-  - [Author](#author)
-  - [Acknowledgments](#acknowledgments)
+- [Table of contents](#table-of-contents)
+- [Overview](#overview)
+  - [The Project](#the-project)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+    - [**Scroll Reveal**](#scroll-reveal)
+    - [**Grid Layouts**](#grid-layouts)
+    - [**Image Sliders**](#image-sliders)
+  - [Form Validation](#form-validation)
+  - [Box-shadow style function](#box-shadow-style-function)
+  - [Label Animations](#label-animations)
+  - [isInputValid() and isInputInvalid() Function](#isinputvalid-and-isinputinvalid-function)
+  - [Creating Span](#creating-span)
+  - [Continued development](#continued-development)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
   
 
@@ -112,12 +112,67 @@ Then crop/optimize/edit your image however you like, add it to your project, and
   
 
 ### What I learned
+This section show some new knowledges that I learned in this project.
+
+
+#### **Scroll Reveal**
+
+As you can read in his own website: 
+
+>*"ScrollReveal is a JavaScript library for easily animating elements as they enter/leave the viewport. It was designed to be robust and flexible, but hopefully you’ll be surprised below at how easy it is to pick up".*
+
+This library simplify animation usage in our projects. Basiclly, `ScrollReveal()` constructor function are called, providing us ***ScrollReveal*** instance. There is so many things to do with this library but the most of time we will use ``reveal()`` method to creation animation wanted. In my project, I had idea to put the ``.products-img__container-wrapper`` and ``.products-img__container-wrapper`` in opposites sides, appearing smoothly when the user reach the frame, the first set starting with imgs and texts and the second starting with texts and imgs. The code that to implement this animation is bellow, with it's syntax:
+
+>``ScrollReveal().reveal(target, options);``
+
+1. **Target**: Using a CSS class selector, you can aim either element to apply animation;
+2. **Options**: This is an object that tou can passa any property descripted in [ScrollReveal documentation.](https://scrollrevealjs.org/api/reveal.html)
+
+
+```javascript
+// Using ScrollReveal Library
+
+// Animating the descriptions containers;
+ScrollReveal().reveal('.description-container:nth-of-type(1)' ,{ 
+  distance: '100px',
+  origin: 'left'
+});
+
+ScrollReveal().reveal('.description-container:nth-of-type(2)' ,{ 
+  distance: '100px',
+  origin: 'right'
+});
+
+// Animating products section
+ScrollReveal().reveal('.products-img__container-wrapper:nth-of-type(1)' ,{ 
+  distance: '100px',
+  origin: 'top'
+});
+
+ScrollReveal().reveal('.products-img__container-wrapper:nth-of-type(2)' ,{ 
+  distance: '100px',
+  origin: 'top'
+});
+
+ScrollReveal().reveal('.products__name' ,{ 
+  distance: '100px',
+  origin: 'bottom'
+});
+
+ScrollReveal().reveal('.product-descriptor' ,{ 
+  distance: '100px',
+  origin: 'bottom'
+});
+```
+The code above set the ``distance`` that the element you move between it appear until the final of transition and the ``origin`` of this animation.
 
   
 
-This section show some new knowledges that I learned in this project.
 
-#### **Grid Layouts**
+
+  
+
+#### <h4 style="color:red">**Grid Layouts**</h4>
 
   
 
@@ -130,6 +185,7 @@ In ***Desktop View***, I decided to show side-by-side other.
   
 **Desktop View**
 
+![Desktop View](./assets/public/desktop-view-products.png)
   
 ```css
 
