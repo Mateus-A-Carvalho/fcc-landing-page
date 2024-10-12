@@ -82,7 +82,7 @@ formEl.addEventListener('submit', (e) => {
 
   HTMLFormElement.prototype.submit.call(formEl); // Inheriting the submit method from HTMLFormElement and calling formEl as thisArg;
 
-})
+});
 
 // Checking if email is valid with regex;
 function isEmailValid(email) {
