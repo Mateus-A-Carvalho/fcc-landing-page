@@ -1,4 +1,4 @@
-<div style="text-align:center"><h1> Freecodecamp Cerfification - Landing Page</h1></div>
+<div style="text-align:center"><h1 style="color:#FECC4C"> Freecodecamp Cerfification - Landing Page</h1></div>
 
   
 
@@ -6,21 +6,20 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
 
   
 
-## Table of contents
-
-  
+## <h2 style="color: #FECC4C">Table of contents</h2>
 
 - [Table of contents](#table-of-contents)
 - [Overview](#overview)
   - [The Project](#the-project)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
+- [ My process](#-my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-    - [**Scroll Reveal**](#scroll-reveal)
-    - [**Grid Layouts**](#grid-layouts)
-    - [**Image Sliders**](#image-sliders)
+  - [Scroll Reveal](#scroll-reveal)
+    - [Grid Layouts](#grid-layouts)
+    - [Image Sliders](#image-sliders)
+  - [UpdateImg() function](#updateimg-function)
   - [Form Validation](#form-validation)
   - [Box-shadow style function](#box-shadow-style-function)
   - [Label Animations](#label-animations)
@@ -32,11 +31,9 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
 
   
 
-## Overview
+## <div style="text-align:center">Overview</div>
 
-  
-
-### The Project
+### <h3 style="color: #FECC4C">The Project</h3>
 
   
 
@@ -62,13 +59,9 @@ Users should be able to:
 
   
 
-### Screenshot
-
-  
+### <h3 style="color: #FECC4C">Screenshot</h3>
 
 ![](./screenshot.jpg)
-
-  
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
@@ -83,8 +76,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
   
   
 
-### Links
-
+### <h3 style="color: #FECC4C">Links</h3>
   
 
 - Repository URL: [Add solution URL here](https://github.com/Mateus-A-Carvalho/fcc-landing-page)
@@ -93,11 +85,11 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
   
 
-## My process
+## <div style="text-align:center"> My process</div>
 
   
 
-### Built with
+### <h3 style="color: #FECC4C">Built with</h3>
 
   
 
@@ -111,11 +103,11 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
   
 
-### What I learned
+### <h3 style="color: #FECC4C">What I learned</h3>
 This section show some new knowledges that I learned in this project.
 
 
-#### **Scroll Reveal**
+### <h3 style="color: #FECC4C">Scroll Reveal</h3>
 
 As you can read in his own website: 
 
@@ -172,7 +164,7 @@ The code above set the ``distance`` that the element you move between it appear 
 
   
 
-#### <h4 style="color:red">**Grid Layouts**</h4>
+#### <h4 style="color:#FECC4C">Grid Layouts</h4>
 
   
 
@@ -183,7 +175,7 @@ In this project I starded to work with Grid Layout. This is a skill that I have 
 In ***Desktop View***, I decided to show side-by-side other.
 
   
-**Desktop View**
+➤ **Desktop View**
 
 ![Desktop View](./assets/public/desktop-view-products.png)
   
@@ -231,7 +223,7 @@ section#products {
 
 ```
 
-**Mobile View**
+➤ **Mobile View**
 
 In ***mobile view***, I decided to show one under other.
 
@@ -277,14 +269,13 @@ section#products {
 
   
 
-#### **Image Sliders**
+#### <h4 style="color: #FECC4C">Image Sliders</h4>
 
-**Controls**
+➣ **Controls**
 
 This part of code I implemented what I learned in a Youtube tutorial's. In the code bellow, the variables <code>firstCurrentImg</code> and <code>secondCurrentImg</code> are controls that check the lenght of <code>firstContainerProductsImgEl</code> and <code>secondContainerProductsImgEl</code>. The Event Handle will check if the target of event type contains the class that refers to images and pass this target as a parameter in the <code>updateImg()</code>.
 
   
-
 ``` javascript
 
 // Img control;
@@ -314,7 +305,7 @@ bodyEl.addEventListener('click', (e) => {
 
 ```
 
-**<code>UpdateImg()</code> function**  
+### <h3 style= "color: #FECC4C"><code style="color: #c6c6c6">UpdateImg()</code> function</h3>
 
 In this code bellow, the <code>updateImg()</code> takes *two parameters*, the *first* tells us which container the we clicking. The *second* parameter passes button type to check the class name. After <code>if/else</code> statement checks the firsts parameters and knows if is first or second, we icrement the **image control's**. After it, we checks two things: <br>
 
@@ -396,13 +387,13 @@ function updateImg(containerNumber, btnType) {
 
   
 
-### Form Validation
+### <h3 style= "color: #FECC4C">Form Validation</h3>
 
 This was the hardest part of my project. I needed to learn a bit of ***RegEx*** to check the inputs. Also, firstly I wanted to made modules and specific files to each function(Validade, Label Animation and etc...). But I realized that my code was very confused and with a lot of bug. So I decided to made the *validate* and other *functionalities* about form in the same file.
 
   
 
-**Valitating**
+➣ **Valitating**
 
   
 
@@ -550,7 +541,7 @@ function labelAnimate(input) {
 
 ---
 
-### Box-shadow style function
+### <h3 style="color: #FECC4C">Box-shadow style function</h3>
 
   This functions receives input as parameters and check if has a class with input name **AND** denies theses values. Bellow I will explain this.
 
@@ -592,7 +583,7 @@ function addInputValidateStyle(input) {
 
   
 
-### Label Animations
+### <h3 style= "color: #FECC4C">Label Animations</h3>
 
 This function makes label moves up when the input is focused.
 
@@ -693,7 +684,7 @@ label.label-animation-focus {
 To ensure that this animation will works I invoked this function in at the beggining of the code.
 
 ---
-### isInputValid() and isInputInvalid() Function
+### <h3 style= "color: #FECC4C"><code style="color: #c6c6c6">isInputValid()</code> and <code style="color: #c6c6c6">isInputInvalid()</code> Function</h3>
 
 The <code>isInputValid()</code> function is very easy to explain. Every time that this function is invoked, I add a class called <code>input-valid</code>. 
 
@@ -734,7 +725,7 @@ The ``isInputValid()`` just add a class ``input-valid`` with box-shadow when it 
 
 ---
 
-### Creating Span
+### <h3 style= "color: #FECC4C">Creating Span</h3>
 
 The last function that I implemented in this project is ``createSpan()``
 
@@ -771,9 +762,7 @@ Outside this code, I implemented a ``setTimeout()`` to remove ``span`` every 200
 
 ---
 
-  
-
-### Continued development
+### <h3 style= "color: #FECC4C">Continued development</h3>
 
   This project was very interesting to me. I did more than what was required. One of functionalities that I want to implement in future is integrate the form with some API that receive the data of form and send an email to user. Also, in this project used ***Lighthouse*** of ***Dev Tools*** and I will use it in every project. Finally, I'm going to start use ***Mobile First*** concept. Bellow I told which improvements I will do in the next projects.
 
@@ -822,11 +811,11 @@ This is a long list of something to study and improve in the next projects.
 
 ---
 
-## Author
+## <h2 style="color: #FECC4C">Author</h2>
 
   
 
-- Website - [Add your name here](https://www.your-site.com)
+- Website - [Add your name here](https://www.your-site.com)(*working in*)
 
 - Frontend Mentor - [@Mateus-A-Carvalho](https://www.frontendmentor.io/profile/Mateus-A-Carvalho)
 
@@ -837,7 +826,7 @@ This is a long list of something to study and improve in the next projects.
 - Instagram - [@OMateusCarvalhoDev](https://www.instagram.com/o.mateus.carvalho.dev/)
 
 
-## Acknowledgments
+## <h2 style="color: #FECC4C">Acknowledgments</h3>
 
   In this project I learned more about ***how can I validate a form***, ***RegEx*** and starts to use some libraries as [Scroll Reveal JS](https://scrollrevealjs.org/). 
 
