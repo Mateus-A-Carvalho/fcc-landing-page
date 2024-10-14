@@ -18,7 +18,7 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
   - [What I learned](#what-i-learned)
   - [Scroll Reveal](#scroll-reveal)
     - [Grid Layouts](#grid-layouts)
-    - [Image Sliders](#image-sliders)
+  - [Image Sliders](#image-sliders)
   - [UpdateImg() function](#updateimg-function)
   - [Form Validation](#form-validation)
   - [Box-shadow style function](#box-shadow-style-function)
@@ -109,6 +109,8 @@ This section show some new knowledges that I learned in this project.
 
 ### <h3 style="color: #FECC4C">Scroll Reveal</h3>
 
+<video src="./assets/media/videos/scroll-reveal.mp4" width="1200" height="540" controls></video>
+
 As you can read in his own website: 
 
 >*"ScrollReveal is a JavaScript library for easily animating elements as they enter/leave the viewport. It was designed to be robust and flexible, but hopefully you’ll be surprised below at how easy it is to pick up".*
@@ -158,11 +160,6 @@ ScrollReveal().reveal('.product-descriptor' ,{
 ```
 The code above set the ``distance`` that the element you move between it appear until the final of transition and the ``origin`` of this animation.
 
-  
-
-
-
-  
 
 #### <h4 style="color:#FECC4C">Grid Layouts</h4>
 
@@ -225,6 +222,8 @@ section#products {
 
 ➤ **Mobile View**
 
+![Mobile View](./assets/public/mobile-view-products.png)
+
 In ***mobile view***, I decided to show one under other.
 
 ```css
@@ -238,8 +237,6 @@ section#products {
   gap:  .5rem;
   font-family:  var(--body-font);
 }
-
-  
 
 .products-img__container-wrapper:nth-of-type(1) {
   grid-column:  1 / -1;
@@ -262,15 +259,21 @@ section#products {
 }
 
 ```
-
-  
-
 ---
 
   
 
-#### <h4 style="color: #FECC4C">Image Sliders</h4>
+### <h3 style="color: #FECC4C">Image Sliders</h3>
 
+➤ **Desktop View**
+
+<video src="./assets/media/videos/update-img-desktop-view.mp4" width="1200" height="540" controls></video>
+
+➤ **Mobile View**
+
+<video src="./assets/media/videos/update-img-mobile-view.mp4" width="1200" height="540" controls></video>
+
+  
 ➣ **Controls**
 
 This part of code I implemented what I learned in a Youtube tutorial's. In the code bellow, the variables <code>firstCurrentImg</code> and <code>secondCurrentImg</code> are controls that check the lenght of <code>firstContainerProductsImgEl</code> and <code>secondContainerProductsImgEl</code>. The Event Handle will check if the target of event type contains the class that refers to images and pass this target as a parameter in the <code>updateImg()</code>.
