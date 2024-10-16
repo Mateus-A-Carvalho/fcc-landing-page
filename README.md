@@ -17,7 +17,7 @@ This is my fourth project to Responsive Web Design Certification [Responsive Web
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Scroll Reveal](#scroll-reveal)
-    - [Grid Layouts](#grid-layouts)
+  - [Grid Layouts](#grid-layouts)
   - [Image Sliders](#image-sliders)
   - [UpdateImg() function](#updateimg-function)
   - [Form Validation](#form-validation)
@@ -109,7 +109,7 @@ This section show some new knowledges that I learned in this project.
 
 ### <h3 style="color: #FECC4C">Scroll Reveal</h3>
 
-<video src="./assets/media/videos/scroll-reveal.mp4" width="1200" height="540" controls></video>
+![ScrollReveal](./assets/public/scroll-reveal.gif)
 
 As you can read in his own website: 
 
@@ -161,7 +161,7 @@ ScrollReveal().reveal('.product-descriptor' ,{
 The code above set the ``distance`` that the element you move between it appear until the final of transition and the ``origin`` of this animation.
 
 
-#### <h4 style="color:#FECC4C">Grid Layouts</h4>
+### <h3 style="color:#FECC4C">Grid Layouts</h3>
 
   
 
@@ -267,11 +267,11 @@ section#products {
 
 ➤ **Desktop View**
 
-<video src="./assets/media/videos/update-img-desktop-view.mp4" width="1200" height="540" controls></video>
+<!-- Put gif here -->
 
 ➤ **Mobile View**
 
-<video src="./assets/media/videos/update-img-mobile-view.mp4" width="1200" height="540" controls></video>
+<!-- Put gif here -->
 
   
 ➣ **Controls**
