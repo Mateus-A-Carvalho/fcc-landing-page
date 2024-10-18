@@ -267,11 +267,11 @@ section#products {
 
 ➤ **Desktop View**
 
-<!-- Put gif here -->
+![Deskttop view](./assets/public/image-slider-desktop-view.gif)
 
 ➤ **Mobile View**
 
-<!-- Put gif here -->
+![Mobile view](./assets/public/image-slider-mobile-view.gif)
 
   
 ➣ **Controls**
@@ -394,7 +394,15 @@ function updateImg(containerNumber, btnType) {
 
 This was the hardest part of my project. I needed to learn a bit of ***RegEx*** to check the inputs. Also, firstly I wanted to made modules and specific files to each function(Validade, Label Animation and etc...). But I realized that my code was very confused and with a lot of bug. So I decided to made the *validate* and other *functionalities* about form in the same file.
 
-  
+
+➤ **Desktop View**
+
+![Desktop View](./assets/public/validate-desktop-view.gif)
+
+➤ **Mobile View**
+
+![Mobile View](./assets/public/validate-mobile-view.gif)
+
 
 ➣ **Valitating**
 
