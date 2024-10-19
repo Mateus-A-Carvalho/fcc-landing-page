@@ -1,4 +1,5 @@
-<div style="text-align:center"><h1 style="color:#FECC4C"> Freecodecamp Cerfification - Landing Page</h1></div>
+![Freecodecamp Logo](./assets/public/FreeCodeCamp_logo.png) 
+<div style="text-align:center"><h1 style="color:#FECC4C"> Freecodecamp Cerfification - Landing Page Project</h1></div>
 
   
 
@@ -61,7 +62,7 @@ Users should be able to:
 
 ### <h3 style="color: #FECC4C">Screenshot</h3>
 
-![](./screenshot.jpg)
+![Project Frame](./assets/public/Frame%201.png)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
